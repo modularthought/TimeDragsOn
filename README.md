@@ -9,3 +9,5 @@ Features:
 * forward autoplay
 * panorama mode
 * frames visible only within "the frame"
+
+Actual code to be added soon.
