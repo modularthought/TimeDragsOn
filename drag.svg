@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="drag.css" ?>
+<svg id="svg_time_drag"
+	 xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg"
+	 xmlns:xlink="http://www.w3.org/1999/xlink"
+	 version="1.1">
+<title id="title">Time Drags On (AKA Drag On "Time")</title>
+<defs id="defs6">
+	<g id="bordercorner">
+		<rect class="framelight"
+			 shape-rendering="crispEdges"
+			 x="0"
+			 y="0"
+			 width="1"
+			 height="1" />
+		<rect class="framemid"
+			 shape-rendering="crispEdges"
+			 x="1"
+			 y="0"
+			 width="1"
+			 height="1" />
+		<rect class="framemid"
+			 shape-rendering="crispEdges"
+			 x="0"
+			 y="1"
+			 width="1"
+			 height="1" />
+	</g>
+	<mask id="borderframe"
+		 maskUnits="objectBoundingBox" >
+		<rect id="brectframe"
+			 shape-rendering="crispEdges"
+			 width="551"
+			 height="393"
+			 x="1"
+			 y="1" />
+	</mask>
+	<mask id="mframe"
+		 maskUnits="objectBoundingBox" >
+		<rect id="rectframe"
+			 shape-rendering="crispEdges"
+			 width="548.35"
+			 height="390.35"
+			 x="2.325"
+			 y="2.325" />
+	</mask>
+	<clipPath id="cframe"
+		 clipPathUnits="objectBoundingBox" >
+		<rect id="rectframec"
+			 shape-rendering="crispEdges"
+			 width="549"
+			 height="391"
+			 x="250"
+			 y="250" />
+	</clipPath>
+	<pattern id="p1" patternUnits="userSpaceOnUse" width="553" height="395"/>
+   <filter id="filt">
+	   <feGaussianBlur stdDeviation="0 0.9" in="SourceGraphic" />
+	</filter>
+</defs>
+<svg id="images_svg"
+	 x="50%"
+	 y="50%">
+	<g id="images_group"
+		 transform="translate(-278.5,-198.5)" >
+		<g id="stitch_group"
+			 transform="translate(0,0)">
+			<rect id="one"
+				 width="300%"
+				 height="300%"
+				 style="fill: #000; stroke: #111; stroke-width: 0.5; stroke-opacity: 0.75;"
+				 x="-1036"
+				 y="315.5" />
+			<rect id="two"
+				 width="300%"
+				 height="300%"
+				 style="fill: #000; stroke: #111; stroke-width: 0.5; stroke-opacity: 0.75;"
+				 x="500"
+				 y="34.5" />
+		</g>
+		<g id="fmask_group"
+			 mask="url(#borderframe)"
+			 transform="translate(0,0)">
+			<g id="frames_group"
+				 transform="translate(0,0)"/>
+		</g>
+	</g>
+</svg>
+<svg id="frame_svg"
+	 x="50%"
+	 y="50%">
+	<g id="frame_layer"
+		 transform="translate(-276.5,-197.5)">
+		<rect id="frame"
+			 shape-rendering="crispEdges"
+			 x="0"
+			 y="0"
+			 width="551"
+			 height="393" />
+		<use xlink:href="#bordercorner"
+			 transform="translate(-1,-1)" />
+		<use xlink:href="#bordercorner"
+			 transform="translate(-1,394),rotate(-90)" />
+		<use xlink:href="#bordercorner"
+			 transform="translate(552,-1),rotate(90)" />
+		<use xlink:href="#bordercorner"
+			 transform="translate(552,394),rotate(180)" />
+	</g>
+</svg>
+<text style="fill: none; stroke: #fff; stroke-width: 3;"
+	 x="20"
+	 y="20"
+	 dx="1 0 0 0 0 0 0 0 0 0 0 1 1 -1">Drag On "Time"</text>
+<text style="fill: #000; stroke: none;"
+	 x="20"
+	 y="20"
+	 dx="1 0 0 0 0 0 0 0 0 0 0 1 1 -1">Drag On "Time"</text>
+<script id="script_time_drag"
+	 xlink:href="drag.js" />
+</svg>

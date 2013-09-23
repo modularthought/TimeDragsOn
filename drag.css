@@ -1,0 +1,51 @@
+/*
+@font-face {
+  font-family: 'xkcd-Regular';
+  src: url('file:///home/purple/Downloads/xkcd-Regular.otf') format('opentype');
+}*/
+#svg_time_drag {
+	background-color: inherit;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	min-width: 553px;
+	min-height: 395px;
+}
+svg {
+	overflow: visible;
+}
+text {
+	font-family: 'xkcd';
+}
+#mframe rect, #borderframe rect {
+	fill: #fff; stroke: none;
+}
+#cframe rect {
+	fill: #000; stroke: none;
+}
+image {
+	image-rendering: optimizeQuality;
+}
+#images_group image {
+	cursor: pointer;
+}
+#frames_group image {
+	clip-path: url(drag.svg#cframe);
+	clip-path: none;
+	opacity: 0;
+	mask: none;
+	mask: url(drag.svg#mframe);
+}
+#frame {
+	stroke-width: 2;
+	stroke: url(drag.svg#p1);
+	stroke: #000;
+	fill: url(drag.svg#p1);
+	fill: none;
+}
+.framemid {
+	fill: #212121; stroke: none;
+}
+.framelight {
+	fill: #b7b7b7; stroke: none;
+}
