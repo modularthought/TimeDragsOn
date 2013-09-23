@@ -6,7 +6,9 @@ var Time = {
 	start: true, pause: false, adv: 0, stitch: false
 	, svg: 'http://www.w3.org/2000/svg', xlink: 'http://www.w3.org/1999/xlink'
 	, furl:
-	'http://imgs.xkcd.com/comics/time/'
+	location.protocol == 'https:' ? 'https://imgs.xkcd.com/comics/time/' :
+		location.protocol == 'http:' ? 'http://imgs.xkcd.com/comics/time/' :
+			'../../Pictures/Time/hash/'
 	, f1url: 'img/0001.png'
 	/* vel=opacity steps, speed=interval speed, delay=time between frames */
 	, vel: 5, speed: 10, delay: 2000
@@ -163,8 +165,6 @@ var Time = {
 			}
 		} else if (!e.altKey && !e.shiftKey && !e.ctrlKey && (e.keyCode == 32)) {
 			// insert pause/play /use space bar
-//			if (!Time.pause) Time.recur(tj);
-//			Time.pause=!Time.pause;
 		} else if (!e.altKey && !e.shiftKey && e.ctrlKey && (e.keyCode == 90)) {
 			// reset with ctrl+z
 			document.getElementById('stitch_group').setAttribute('transform','translate('+Time.resX+','+Time.resY+')');
