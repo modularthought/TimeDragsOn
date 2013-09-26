@@ -1,8 +1,9 @@
-/*
 @font-face {
-  font-family: 'xkcd-Regular';
-  src: url('file:///home/purple/Downloads/xkcd-Regular.otf') format('opentype');
-}*/
+	font-family: 'xkcd-Regular';
+	src: local('?'), url('xkcd-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 #svg_time_drag {
 	background-color: inherit;
 	margin: auto;
@@ -15,7 +16,7 @@ svg {
 	overflow: visible;
 }
 text {
-	font-family: 'xkcd';
+	font-family: 'xkcd-Regular','xkcd';
 }
 #mframe rect, #borderframe rect {
 	fill: #fff; stroke: none;
