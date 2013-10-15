@@ -9,19 +9,16 @@
 <defs id="defs6">
 	<g id="bordercorner">
 		<rect class="framelight"
-			 shape-rendering="crispEdges"
 			 x="0"
 			 y="0"
 			 width="1"
 			 height="1" />
 		<rect class="framemid"
-			 shape-rendering="crispEdges"
 			 x="1"
 			 y="0"
 			 width="1"
 			 height="1" />
 		<rect class="framemid"
-			 shape-rendering="crispEdges"
 			 x="0"
 			 y="1"
 			 width="1"
@@ -30,7 +27,6 @@
 	<mask id="borderframe"
 		 maskUnits="objectBoundingBox" >
 		<rect id="brectframe"
-			 shape-rendering="crispEdges"
 			 width="551"
 			 height="393"
 			 x="1"
@@ -39,7 +35,6 @@
 	<mask id="mframe"
 		 maskUnits="objectBoundingBox" >
 		<rect id="rectframe"
-			 shape-rendering="crispEdges"
 			 width="548.35"
 			 height="390.35"
 			 x="2.325"
@@ -54,7 +49,6 @@
 			 x="250"
 			 y="250" />
 	</clipPath>
-	<pattern id="p1" patternUnits="userSpaceOnUse" width="553" height="395"/>
    <filter id="filt">
 	   <feGaussianBlur stdDeviation="0 0.9" in="SourceGraphic" />
 	</filter>
@@ -69,15 +63,27 @@
 			<rect id="one"
 				 width="300%"
 				 height="300%"
-				 style="fill: #000; stroke: #111; stroke-width: 0.5; stroke-opacity: 0.75;"
+				 style="fill: #000; stroke: none;"
 				 x="-1036"
 				 y="315.5" />
+			<line id="onel"
+				 x1="-1036"
+				 y1="315.5"
+				 x2="500"
+				 y2="315.5"
+				 style="stroke: #111; stroke-width: 0.5; stroke-opacity: 0.75;" />
 			<rect id="two"
 				 width="300%"
 				 height="300%"
-				 style="fill: #000; stroke: #111; stroke-width: 0.5; stroke-opacity: 0.75;"
+				 style="fill: #000; stroke: none;"
 				 x="500"
 				 y="34.5" />
+			<line id="twol"
+				 x1="500"
+				 y1="34.5"
+				 x2="1500"
+				 y2="34.5"
+				 style="stroke: #111; stroke-width: 0.5; stroke-opacity: 0.75;" />
 		</g>
 		<g id="fmask_group"
 			 mask="url(#borderframe)"
@@ -93,7 +99,6 @@
 	<g id="frame_layer"
 		 transform="translate(-276.5,-197.5)">
 		<rect id="frame"
-			 shape-rendering="crispEdges"
 			 x="0"
 			 y="0"
 			 width="551"
@@ -116,6 +121,9 @@
 	 x="20"
 	 y="20"
 	 dx="1 0 0 0 0 0 0 0 0 0 0 1 1 -1">Drag On "Time"</text>
-<script id="script_time_drag"
-	 xlink:href="drag.js" />
+<script id="script_time_drag" xlink:href="drag.js" />
+<script id="script_time_model" xlink:href="model.js" />
+<script id="script_time_view" xlink:href="view.js" />
+<script id="script_time_controller" xlink:href="controller.js" />
+<script><![CDATA[Time.init(2552);]]></script>
 </svg>
