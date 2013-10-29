@@ -12,18 +12,28 @@
 	min-width: 553px;
 	min-height: 395px;
 }
+
 svg {
 	overflow: visible;
 }
-text {
-	font-family: 'xkcd-Regular','xkcd';
-}
-#mframe rect, #borderframe rect {
+
+/* Masks */
+#mframe #rectframe, #borderframe #brectframe {
 	fill: #fff; stroke: none;
 }
-#cframe rect {
+#mframe #dialogue {
 	fill: #000; stroke: none;
 }
+
+/* Panorama */
+#stitch_group g {
+	opacity: 0;
+}
+.stitch_bg {
+	fill: #000; stroke: #111; stroke-width: 1.5; stroke-opacity: 0.75;
+}
+
+/* Frames */
 image {
 	image-rendering: optimizeQuality;
 }
@@ -31,22 +41,137 @@ image {
 	cursor: pointer;
 }
 #frames_group image {
-	clip-path: url(drag.svg#cframe);
-	clip-path: none;
 	opacity: 0;
-	mask: none;
+	display: none;
 	mask: url(drag.svg#mframe);
 }
-#frame {
-	stroke-width: 2;
-	stroke: url(drag.svg#p1);
-	stroke: #000;
-	fill: url(drag.svg#p1);
-	fill: none;
+
+/* Frame Border */
+#border {
+	stroke: none;
+	fill: #000;
 }
-.framemid {
+.bordermid {
 	fill: #212121; stroke: none;
 }
-.framelight {
+.borderlight {
 	fill: #b7b7b7; stroke: none;
 }
+#bordercorner rect, #borderframe rect, #mframe rect, #border {
+	shape-rendering: crispEdges
+}
+
+ /* GUI */
+/*-----*/
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+
+/* Display Text */
+text {
+	font-family: 'xkcd','xkcd-Regular';
+}
+.text_outline {
+	fill: none; stroke: #fff; stroke-width: 3;
+}
+.text_fill {
+	fill: #000; stroke: none;
+}
+.hilite_outline {
+	fill: none; stroke: #000; stroke-width: 3;
+}
+.hilite_fill {
+	fill: #fff; stroke: none;
+}
+
+/* Select Menu */
+#periods {
+	position: absolute; bottom: 0;
+	margin: auto; cursor: pointer;
+	left: 0; right: 0;
+	text-align: right; opacity: 0;
+}
+#periods option {
+	min-width: 250px; overflow: hidden;
+	text-align: left;
+	font-family: 'xkcd','xkcd-Regular';
+	font-size: 1em;
+}
+#periods option.eon {
+	font-weight: bolder; color: #fff; font-style: italic;
+	text-align: center;
+	font-size: 1.55em;
+}
+.eon0, .eon1, .eon2 {
+	border-width: 0 3px 0; border-style: solid;
+}
+.eon0 {
+	background-color: #777; border-color: #777;
+}
+.eon1 {
+	background-color: #696969; border-color: #696969;
+}
+.eon2 {
+	background-color: #5a5a5a; border-color: #5a5a5a;
+}
+.eon0.end, .eon1.end, .eon2.end {
+	border-bottom-width: 3px;
+}
+#periods option.era {
+	font-weight: bold; color: #000;
+	text-align: left;
+	font-size: 1.35em;
+}
+.era0 {
+	background-color: #f0f0f0;
+}
+.era1 {
+	background-color: #e6e6e6;
+}
+.era2 {
+	background-color: #dcdcdc;
+}
+.era3 {
+	background-color: #d2d2d2;
+}
+.era4 {
+	background-color: #c8c8c8;
+}
+.era5 {
+	background-color: #bebebe;
+}
+.era6 {
+	background-color: #b4b4b4;
+}
+.era7 {
+	background-color: #aaa;
+}
+.era8 {
+	background-color: #a5a5a5;
+}
+.era9 {
+	background-color: #a0a0a0;
+}
+.era10 {
+	background-color: #9b9b9b;
+}
+.era11 {
+	background-color: #969696;
+}
+.era12 {
+	background-color: #919191;
+}
+.era13 {
+	background-color: #8c8c8c;
+}
+.era14 {
+	background-color: #878787;
+}
+/* this is not working (except for eon and era, not periods)
+#periods option[label]:hover {
+	background-color: #000; color: #fff;
+}
+*/

@@ -1,129 +1,95 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <?xml-stylesheet type="text/css" href="drag.css" ?>
 <svg id="svg_time_drag"
-	 xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg"
 	 xmlns:xlink="http://www.w3.org/1999/xlink"
 	 version="1.1">
 <title id="title">Time Drags On (AKA Drag On "Time")</title>
 <defs id="defs6">
 	<g id="bordercorner">
-		<rect class="framelight"
-			 x="0"
-			 y="0"
-			 width="1"
-			 height="1" />
-		<rect class="framemid"
-			 x="1"
-			 y="0"
-			 width="1"
-			 height="1" />
-		<rect class="framemid"
-			 x="0"
-			 y="1"
-			 width="1"
-			 height="1" />
+		<rect class="borderlight"
+			 x="0" y="0" width="1" height="1" />
+		<rect class="bordermid"
+			 x="1" y="0" width="1" height="1" />
+		<rect class="bordermid"
+			 x="0" y="1" width="1" height="1" />
 	</g>
 	<mask id="borderframe"
 		 maskUnits="objectBoundingBox" >
 		<rect id="brectframe"
-			 width="551"
-			 height="393"
-			 x="1"
-			 y="1" />
+			 x="1" y="1" width="551" height="393" />
 	</mask>
 	<mask id="mframe"
 		 maskUnits="objectBoundingBox" >
 		<rect id="rectframe"
-			 width="548.35"
-			 height="390.35"
-			 x="2.325"
-			 y="2.325" />
-	</mask>
-	<clipPath id="cframe"
-		 clipPathUnits="objectBoundingBox" >
-		<rect id="rectframec"
-			 shape-rendering="crispEdges"
 			 width="549"
 			 height="391"
-			 x="250"
-			 y="250" />
-	</clipPath>
-   <filter id="filt">
-	   <feGaussianBlur stdDeviation="0 0.9" in="SourceGraphic" />
-	</filter>
+			 x="2.5"
+			 y="2.5" />
+		<g id="dialogue"></g>
+	</mask>
+	<text id="tdrag"
+		 x="5" y="20"
+		 dx="1 0 0 0 0 0 0 0 0 0 0 1 1 -1">Drag On "Time"
+		 <tspan id="pauseStatus">Loading</tspan></text>
+	<text id="tframe"
+		 x="-140" y="20"
+		 dx="0 1 1 1 1 -1.5" >
+		frame#<tspan id="frame_text"
+		 dx="2 1 1 1 1" />
+	</text>
+	<text id="tptext"><tspan x="0" y="0" id="tperiod" /></text>
 </defs>
 <svg id="images_svg"
 	 x="50%"
-	 y="50%">
-	<g id="images_group"
-		 transform="translate(-278.5,-198.5)" >
+	 y="50%" 
+	 >
+	<svg id="images_group"
+	 x="-276"
+	 y="-198" 
+		  >
 		<g id="stitch_group"
-			 transform="translate(0,0)">
-			<rect id="one"
-				 width="300%"
-				 height="300%"
-				 style="fill: #000; stroke: none;"
-				 x="-1036"
-				 y="315.5" />
-			<line id="onel"
-				 x1="-1036"
-				 y1="315.5"
-				 x2="500"
-				 y2="315.5"
-				 style="stroke: #111; stroke-width: 0.5; stroke-opacity: 0.75;" />
-			<rect id="two"
-				 width="300%"
-				 height="300%"
-				 style="fill: #000; stroke: none;"
-				 x="500"
-				 y="34.5" />
-			<line id="twol"
-				 x1="500"
-				 y1="34.5"
-				 x2="1500"
-				 y2="34.5"
-				 style="stroke: #111; stroke-width: 0.5; stroke-opacity: 0.75;" />
-		</g>
+			 transform="translate(0,0)" />
 		<g id="fmask_group"
 			 mask="url(#borderframe)"
 			 transform="translate(0,0)">
 			<g id="frames_group"
-				 transform="translate(0,0)"/>
+				 transform="translate(0,0)" />
 		</g>
+		<g id="border_layer"
+			 transform="translate(0.5,0.5)"
+			  >
+			<path id="border"
+				 d="M 0,0 0,395 553,395 553,0 z m 2,2 549,0 0,391 -549,0 z" />
+			<use xlink:href="#bordercorner"
+				 transform="translate(0,0)" />
+			<use xlink:href="#bordercorner"
+				 transform="translate(0,395),rotate(-90)" />
+			<use xlink:href="#bordercorner"
+				 transform="translate(553,0),rotate(90)" />
+			<use xlink:href="#bordercorner"
+				 transform="translate(553,395),rotate(180)" />
+		</g>
+	</svg>
+</svg>
+<svg id="gui" class="show">
+	<use class="text_outline" xlink:href="#tdrag" />
+	<use class="text_fill" xlink:href="#tdrag" />
+	<use class="text_outline" xlink:href="#tframe" />
+	<use class="text_fill" xlink:href="#tframe" />
+	<use id="text_o" class="text_outline" xlink:href="#tptext" />
+	<use id="text_f" class="text_fill" xlink:href="#tptext" />
+	<g transform="translate(0,-23)">
+		<foreignObject width="100%" height="26" x="0" y="100%">
+			<body xmlns="http://www.w3.org/1999/xhtml">
+				<select id="periods" />
+			</body>
+		</foreignObject>
 	</g>
 </svg>
-<svg id="frame_svg"
-	 x="50%"
-	 y="50%">
-	<g id="frame_layer"
-		 transform="translate(-276.5,-197.5)">
-		<rect id="frame"
-			 x="0"
-			 y="0"
-			 width="551"
-			 height="393" />
-		<use xlink:href="#bordercorner"
-			 transform="translate(-1,-1)" />
-		<use xlink:href="#bordercorner"
-			 transform="translate(-1,394),rotate(-90)" />
-		<use xlink:href="#bordercorner"
-			 transform="translate(552,-1),rotate(90)" />
-		<use xlink:href="#bordercorner"
-			 transform="translate(552,394),rotate(180)" />
-	</g>
-</svg>
-<text style="fill: none; stroke: #fff; stroke-width: 3;"
-	 x="20"
-	 y="20"
-	 dx="1 0 0 0 0 0 0 0 0 0 0 1 1 -1">Drag On "Time"</text>
-<text style="fill: #000; stroke: none;"
-	 x="20"
-	 y="20"
-	 dx="1 0 0 0 0 0 0 0 0 0 0 1 1 -1">Drag On "Time"</text>
 <script id="script_time_drag" xlink:href="drag.js" />
 <script id="script_time_model" xlink:href="model.js" />
 <script id="script_time_view" xlink:href="view.js" />
 <script id="script_time_controller" xlink:href="controller.js" />
-<script><![CDATA[Time.init(2552);]]></script>
+<script><![CDATA[Time.init();]]></script>
 </svg>
