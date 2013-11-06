@@ -12,28 +12,21 @@
 	min-width: 553px;
 	min-height: 395px;
 }
-
 svg {
 	overflow: visible;
 }
-
-/* Masks */
 #mframe #rectframe, #borderframe #brectframe {
 	fill: #fff; stroke: none;
 }
 #mframe #dialogue {
 	fill: #000; stroke: none;
 }
-
-/* Panorama */
 #stitch_group g {
 	opacity: 0;
 }
 .stitch_bg {
 	fill: #000; stroke: #111; stroke-width: 1.5; stroke-opacity: 0.75;
 }
-
-/* Frames */
 image {
 	image-rendering: optimizeQuality;
 }
@@ -45,8 +38,6 @@ image {
 	display: none;
 	mask: url(drag.svg#mframe);
 }
-
-/* Frame Border */
 #border {
 	stroke: none;
 	fill: #000;
@@ -60,17 +51,12 @@ image {
 #bordercorner rect, #borderframe rect, #mframe rect, #border {
 	shape-rendering: crispEdges
 }
-
- /* GUI */
-/*-----*/
 .show {
 	display: block;
 }
 .hide {
 	display: none;
 }
-
-/* Display Text */
 text {
 	font-family: 'xkcd','xkcd-Regular';
 }
@@ -86,8 +72,6 @@ text {
 .hilite_fill {
 	fill: #fff; stroke: none;
 }
-
-/* Select Menu */
 #periods {
 	position: absolute; bottom: 0;
 	margin: auto; cursor: pointer;
@@ -170,8 +154,3 @@ text {
 .era14 {
 	background-color: #878787;
 }
-/* this is not working (except for eon and era, not periods)
-#periods option[label]:hover {
-	background-color: #000; color: #fff;
-}
-*/

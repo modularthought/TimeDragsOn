@@ -18,6 +18,13 @@ This is best viewed in as large of a viewing area (i.e. full screen) as possible
 
 * * *
 
+Version 0.2.1
+-------------
+
+* frame selection controls now more stable
+* panorama switch now more stable
+* refocus frame automatically between panoramas
+
 Version 0.2.0
 -------------
 

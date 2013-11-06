@@ -2,7 +2,6 @@
 	{
 		"num": 2531,
 		"x": 0, "y": 0,
-		"start": true,
 		"epoch": "mpd5k0",
 		"hash": "ab99573423240fae0d46d287dd8be706b92a5026abccf1c4cf2b3ef9363e440f"
 	},
@@ -87,14 +86,12 @@
 	{
 		"num": 2545,
 		"x": 0, "y": 0,
-		"end": true,
 		"epoch": "mpe8g0",
 		"hash": "836e1c9ea749f64bb154003f2e7125c36b2a10dabbad165ef0454ba4b46b9452"
 	},
 	{
 		"num": 2546,
 		"x": 0, "y": 0,
-		"start": true,
 		"epoch": "mpeb80",
 		"hash": "f124c12c1881bbc43aa2d45c33453d43554a3e7f401f03de04684d1794129824"
 	},
@@ -125,7 +122,6 @@
 	{
 		"num": 2551,
 		"x": 0, "y": 0,
-		"end": true,
 		"epoch": "mpep40",
 		"hash": "2c023cbf466e3473c27eb04cf22dabaaf14884634373438e0178af1af7ea92a4"
 	},
@@ -139,7 +135,6 @@
 			"x1": 0, "y1": 315.5,
 			"x2": 0, "y2": 34.5
 		},
-		"start": true,
 		"stitch": 2552,
 		"epoch": "mperw0",
 		"hash": "42f61ae2e844c4a9109837e5188059142a20e74615eb12dc6722ece3a8c50558"
@@ -547,7 +542,6 @@
 	{
 		"num": 2610,
 		"x": 486, "y": -301,
-		"end": true,
 		"stitch": 2552,
 		"epoch": "mpj900",
 		"hash": "22504f5d2f03a4b1963e80bbe4f3ebe91585d0d683297191397e9e51f68ea777"
@@ -556,15 +550,12 @@
 	{
 		"num": 2611,
 		"x": 0, "y": 0,
-		"start": true,
-		"end": true,
 		"epoch": "mpjbs0",
 		"hash": "899a7df2bc33dfc043407265eea1c0ee68c6dd61998ab8b5d854ab8f19589c92"
 	},
 	{
 		"num": 2612,
 		"x": 0, "y": 0,
-		"start": true,
 		"epoch": "mpjek0",
 		"hash": "7cecd7f50f294c7ecf39953522854e17775d17dbf86981c7b379d6df713fd658"
 	},
@@ -577,15 +568,12 @@
 	{
 		"num": 2614,
 		"x": 0, "y": 0,
-		"end": true,
 		"epoch": "mpjk40",
 		"hash": "13069a2df9d2b962fca4a1ff29f4c93affc08d7a576fc17028ba6955d3c21a9c"
 	},
 	{
 		"num": 2615,
 		"x": 0, "y": 0,
-		"start": true,
-		"end": true,
 		"epoch": "mpjmw0",
 		"hash": "d129949fbe36a57a3af77f23d284e18da2542bf49b53a0e7cb2f7b96fd59b6af"
 	}

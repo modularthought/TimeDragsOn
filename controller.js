@@ -1,21 +1,22 @@
-Time.Controller = {
+Time.C = {
 	pause: false, pauseSave: false, blur: 0, shift: 1
 	, initlisten: function(){
-		window.addEventListener('blur', function(){Time.Controller.blur=100}, false);
-		window.addEventListener('focus', function(){Time.Controller.blur=0}, false);
-		Time.View.img.addEventListener('mousedown', Time.Controller.initdrag, false);
-		document.addEventListener('keydown', Time.Controller.keyFn, false);
-		document.getElementById('periods').addEventListener('click', Time.Controller.skipViaSelect, false);
+		window.addEventListener('blur', function(){Time.C.blur=100}, false);
+		window.addEventListener('focus', function(){Time.C.blur=0}, false);
+		Time.V.img.addEventListener('mousedown', Time.C.initdrag, false);
+		document.addEventListener('keydown', Time.C.keyFn, false);
+		document.getElementById('periods').addEventListener('click', Time.C.skipViaSelect, false);
 		document.getElementById('periods').addEventListener('blur', function(){
-			Time.Controller.pause = Time.Controller.pauseSave;
-			Time.View.displayPStat(Time.Controller.pause);
-			if (!Time.Controller.pause && !Time.View.blackflag) {
-				Time.View.iterate();
+			Time.C.pause = Time.C.pauseSave;
+			Time.V.displayPStat(Time.C.pause);
+			if (!Time.C.pause && !Time.V.blackflag) {
+				clearInterval(Time.V.stopIterate);
+				Time.V.iterate();
 			}
 		}, false);
 		window.addEventListener('resize', function(){
-			Time.View.centerText('tperiod',true)
-			Time.View.centerText('tframe')
+			Time.V.centerText('tperiod',true)
+			Time.V.centerText('tframe')
 		}, false)
 		document.getElementById('periods').addEventListener('mouseover', function() {
 			document.getElementById('text_f').setAttribute('class','hilite_fill');
@@ -27,7 +28,7 @@ Time.Controller = {
 		}, false)
 	}
 	, initdrag: function(e) {
-		var t = Time.View.stitch;
+		var t = Time.V.stitch;
 		if (e.preventDefault) e.preventDefault();
 		e.cancelBubble = false;
 		if (t.getElementsByTagName('image')[0]) {
@@ -40,54 +41,52 @@ Time.Controller = {
 		t.dragX = e.clientX || 0;
 		t.dragY = e.clientY || 0;
 		if (t.dragX === 0) {
-			Time.Controller.drag(e);
+			Time.C.drag(e);
 		} else {
-			document.addEventListener('mousemove', Time.Controller.drag, false);
-			document.addEventListener('mouseup', Time.Controller.removedrag, false);
+			document.addEventListener('mousemove', Time.C.drag, false);
+			document.addEventListener('mouseup', Time.C.removedrag, false);
 		}
 	}
 	, drag: function(e) {
-		var t = Time.View.stitch;
+		var t = Time.V.stitch;
 		var framesizex = 553, framesizey = 395;
 		var x = ((+t.getAttribute('transform').match(/\(([-\d.]+)/)[1]||0)+
 				(e.clientX || e.x || 0) - t.dragX)
 		, y = ((+t.getAttribute('transform').match(/,([-\d.]+)/)[1]||0)+
 					(e.clientY || e.y || 0) - t.dragY)
-	/* translate x =
-			check right limit
-						  check left limit  else leave alone */
 		x = (x > 0) ? 0 : (x < -t.width+framesizex-2) ? -t.width+framesizex-2 : x
-	/* translate y =
-			check bottom limit 			check top limit 	else leave alone */
 		y = (y > t.height-framesizey+2) ? t.height-framesizey+2 :  (y < 0) ? 0 : y
-		if (!Time.Model.current.hasAttribute('class') || !Time.Model.current.getAttribute('class').match(/s\d{4}/)) {
+		if (!Time.M.current.hasAttribute('class') || !Time.M.current.getAttribute('class').match(/s\d{4}/)) {
 			x = y = 0;
 		}
 		t.dragX = e.clientX;
 		t.dragY = e.clientY;
-		Time.Model.setTranslate(x,y)
+		Time.M.setTranslate(x,y)
 	}
 	, removedrag: function() {
-		document.removeEventListener('mousemove', Time.Controller.drag, false);
-		document.removeEventListener('mouseup', Time.Controller.removedrag, false);
+		document.removeEventListener('mousemove', Time.C.drag, false);
+		document.removeEventListener('mouseup', Time.C.removedrag, false);
 	}
 	, keyFn: function(e) {
 		if (!e.altKey && (e.keyCode <= 40 && e.keyCode >= 37)) {
 			e.cancelBubble = false;
 			e.x = e.y = 0;
 			if (e.ctrlKey) {
-			/* step frame forward/reverse */
 				if (e.keyCode === 37) {
-					Time.Controller.shift-=2;
-					if (Time.Controller.pause && !Time.View.blackflag) Time.View.iterate()
+					Time.C.shift -= 2;
+					if (Time.C.pause && !Time.V.blackflag) {
+						clearInterval(Time.V.stopIterate);
+						Time.V.iterate()
+					}
 				} else if (e.keyCode === 39) {
-					++Time.Controller.shift;
-					if(Time.Controller.pause && !Time.View.blackflag){
-						Time.View.iterate()
+					++Time.C.shift;
+					if(Time.C.pause && !Time.V.blackflag){
+						--Time.C.shift;
+						clearInterval(Time.V.stopIterate);
+						Time.V.iterate()
 					}
 				}
 			} else if (e.ctrlKey && e.shiftKey) {
-			/* skip scene forward/reverse */
 				if (e.keyCode === 37) {
 				} else if (e.keyCode === 39) {
 				}
@@ -103,20 +102,18 @@ Time.Controller = {
 					break;
 				}
 				if (e.shiftKey) e.x *= 10, e.y *= 10;
-				Time.Controller.initdrag(e);
+				Time.C.initdrag(e);
 			}
 		} else if (!e.altKey && !e.shiftKey && e.ctrlKey && (e.keyCode === 90)) {
-			/* reset with [ctrl]+[z] */
-			Time.Model.setTranslate(Time.Model.resX,Time.Model.resY)
+			Time.M.setTranslate(Time.M.resX,Time.M.resY)
 		} else if (!e.altKey && !e.shiftKey && !e.ctrlKey && (e.keyCode === 32)) {
-			/* pause/play with [space bar] */
-			Time.Controller.pause = !Time.Controller.pause;
-			Time.View.displayPStat(Time.Controller.pause);
-			if (!Time.Controller.pause && !Time.View.blackflag) {
-				Time.View.iterate();
+			Time.C.pause = !Time.C.pause;
+			Time.V.displayPStat(Time.C.pause);
+			if (!Time.C.pause && !Time.V.blackflag) {
+				clearInterval(Time.V.stopIterate);
+				Time.V.iterate();
 			}
 		} else if (!e.altKey && !e.shiftKey && !e.ctrlKey && (e.keyCode === 192)) {
-			/* toggle menu with [`] */
 			var gui = document.getElementById('gui');
 			gui.setAttribute('class',
 				(gui.getAttribute('class') == 'show') ? 'hide' : 'show'
@@ -126,14 +123,16 @@ Time.Controller = {
 	, skipViaSelect: function(e) {
 		if (e.target && e.target.nodeName == "option" && !e.target.disabled) {
 			var target = e.target;
-			Time.Model.cfn = (+target.label == 1) ? 1 : +target.label-1;
-			Time.Controller.pause = Time.Controller.pauseSave;
-			Time.View.displayPStat(Time.Controller.pause);
-			Time.View.iterate();
+			Time.M.cfn = +target.label;
+			Time.C.pause = Time.C.pauseSave;
+			Time.V.displayPStat(Time.C.pause);
+			clearInterval(Time.V.stopIterate);
+			Time.M.cfn -= 1;
+			Time.V.iterate();
 		} else {
-			Time.Controller.pauseSave = Time.Controller.pause;
-			Time.Controller.pause = true;
-			Time.View.displayPStat(Time.Controller.pause);
+			Time.C.pauseSave = Time.C.pause;
+			Time.C.pause = true;
+			Time.V.displayPStat(Time.C.pause);
 		}
 	}
 }

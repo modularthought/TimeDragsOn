@@ -1,4 +1,4 @@
-Time.View = {
+Time.V = {
 	svg: 'http://www.w3.org/2000/svg', xlink: 'http://www.w3.org/1999/xlink'
 	, html: 'http://www.w3.org/1999/xhtml'
 	, url:
@@ -6,15 +6,15 @@ Time.View = {
 			location.protocol === 'http:' ? 'http://imgs.xkcd.com/comics/time/' :
 				'../../Pictures/Time/hash/'
 	, urlf1: 'img/0001.png'
-	, ready: false, blackflag: false
+	, ready: false, blackflag: false, stopIterate: ''
 	, img: document.getElementById('images_group')
 	, stitch: document.getElementById('stitch_group')
 	, frames: document.getElementById('frames_group')
 	, addStitch: function(frame){
 		var screenW = screen.width, screenH = screen.height;
-		var imgS = document.createElementNS(Time.View.svg,'image')
-		, imgP = document.createElementNS(Time.View.svg,'polygon')
-		, imgG = document.createElementNS(Time.View.svg,'g');
+		var imgS = document.createElementNS(Time.V.svg,'image')
+		, imgP = document.createElementNS(Time.V.svg,'polygon')
+		, imgG = document.createElementNS(Time.V.svg,'g');
 		imgP.setAttribute('points',
 			((533-screenW)/2)+','+frame.stitch_obj.y1+
 			' 0,'+frame.stitch_obj.y1+
@@ -24,19 +24,18 @@ Time.View = {
 			' '+((533-screenW)/2)+','+(frame.stitch_obj.height-(screenH-395)/2));
 		imgP.setAttribute('class','stitch_bg');
 		imgG.appendChild(imgP);
-		imgS.setAttributeNS(Time.View.xlink, 'href', 'img/'+frame.num.pad()+'_stitch.png');
+		imgS.setAttributeNS(Time.V.xlink, 'href', 'img/'+frame.num.pad()+'_stitch.png');
 		imgS.setAttribute('x',frame.stitch_obj.x);
 		imgS.setAttribute('y',frame.stitch_obj.y);
 		imgS.setAttribute('width',frame.stitch_obj.width);
 		imgS.setAttribute('height',frame.stitch_obj.height);
 		imgG.appendChild(imgS);
-
 		imgG.setAttribute('id','imgs'+frame.num.pad());
 		imgG.setAttribute('transform','translate(0,0)')
-		Time.View.stitch.appendChild(imgG);
+		Time.V.stitch.appendChild(imgG);
 	}
 	, addFrame: function(frame){
-		var img = document.createElementNS(Time.View.svg,'image')
+		var img = document.createElementNS(Time.V.svg,'image')
 		img.setAttribute('transform','translate('+frame.x+','+frame.y+')');
 		img.setAttribute('width',553);
 		img.setAttribute('height',395);
@@ -51,17 +50,19 @@ Time.View = {
 			img.setAttribute('class','s'+frame.stitch);
 		}
 		img.setAttribute('id','imgf'+frame.num.pad());
-		Time.View.frames.appendChild(img);
+		Time.V.frames.appendChild(img);
 	}
 	, addImage: function(frame){
 		var img = document.getElementById('imgf'+frame.num.pad());
-		img.setAttributeNS(Time.View.xlink, 'href', (frame.num === 1) ? Time.View.urlf1 :
-											 Time.View.url+frame.hash+'.png');
+		img.setAttributeNS(Time.V.xlink, 'href', (frame.num === 1) ? Time.V.urlf1 :
+											 Time.V.url+frame.hash+'.png');
 		return img;
 	}
 	, displayPStat: function(paused) {
-		var pauseStat = (paused) ? 'Paused' : 'Playing';
-		document.getElementById('pauseStatus').firstChild.nodeValue = pauseStat;
+		document.getElementById('pauseStatus').firstChild.nodeValue = (paused) ? 'Paused' : 'Playing';
+	}
+	, displayCStat: function() {
+		document.getElementById('pauseStatus').firstChild.nodeValue = 'Caching';
 	}
 	, centerText: function(id,y){
 		var t = document.getElementById(id);
@@ -71,112 +72,107 @@ Time.View = {
 			t.setAttribute('y',window.innerHeight-6)
 		}
 	}
-	, showFrNum: function(frame){
+	, showFrNum: function(adv){
+		var json = Time.M.json;
+		var frame = json[adv]
 		document.getElementById('frame_text').firstChild.nodeValue = frame.num.pad();
-		Time.View.centerText('tframe')
+		Time.V.centerText('tframe')
 	}
-	, showFrame: function(frame,o,prev){
+	, showFrame: function(adv,o,prev){
 		var end = prev;
-		var adv = Time.Model.cfn;
-		var json = Time.Model.json;
-		if (frame.stitch && Time.Model.currentS.style.opacity == 0) {
-			document.getElementById('imgs'+frame.stitch.pad()).style.opacity = (o >= 0 && o <= 100) ? o/100 : 1;
+		var adv = Time.M.cfn;
+		var json = Time.M.json;
+		if (json[adv].stitch && Time.M.currentS.style.opacity == 0) {
+			Time.M.setTranslate(Time.M.resX,Time.M.resY);
+			Time.M.currentS.style.opacity = (o >= 0 && o <= 100) ? o/100 : 1;
 		}
-		if (json[adv] && json[adv].end && json[adv].stitch ||
-			Time.Model.currentS != Time.Model.previousS && Time.Model.previousS != ''
-			&& Time.Model.previousS.style.opacity == 1) {
+		if (Time.M.currentS != Time.M.previousS && Time.M.previousS != ''
+			&& Time.M.previousS.style.opacity == 1) {
 			end = true;
-			if (Time.Model.currentS || Time.Model.previousS) (Time.Model.currentS || Time.Model.previousS).style.opacity = (end && (o >= 0 && o <= 100)) ? (100-o)/100 : 0;
+			Time.M.setTranslate(Time.M.resX,Time.M.resY);
+			if (Time.M.currentS || Time.M.previousS) (Time.M.currentS || Time.M.previousS).style.opacity = (end && (o >= 0 && o <= 100)) ? (100-o)/100 : 0;
 		}
-		document.getElementById('imgf'+frame.num.pad()).style.opacity = (end) ? (100-o)/100 : (o >= 0 && o <= 100) ? o/100 : 1;
+		Time.M.current.style.opacity = (end) ? (100-o)/100 : (o >= 0 && o <= 100) ? o/100 : 1;
 	}
-	, hideFrame: function(frame) {
-		var adv = Time.Model.cfn;
-		var json = Time.Model.json;
-		if (Time.Model.start) {
-			Time.Model.start = false;
-		} else {
-			if (!json[adv+1]) {
-				Time.Model.start = true;
-			}
-			document.getElementById('imgf'+Time.Model.pfn.pad()).style.display = 'none';
-			Time.Model.cfn += Time.Controller.shift;
+	, hideFrame: function() {
+		var json = Time.M.json;
+		if (Time.M.pfn) {
+			Time.M.previous.removeAttribute('style');
 		}
 	}
 	, delay: function() {
-		var adv = Time.Model.cfn;
-		var json = Time.Model.json;
-		Time.Model.pfn = adv;
-		Time.View.blackflag = false;
-		Time.Controller.shift = 1;
-		if (!json[adv+1]) return false;
-		var wait = setTimeout(function(){
-			if (!Time.Controller.pause) Time.View.iterate()
-		}, Time.anim ? Time.delay : (100/Time.vel*Time.speed)+Time.delay)
-		if (json[adv+1] && !json[adv+1].load) {
-			clearInterval(wait);
-			Time.View.ready = false;
-			Time.View.cacheImg(json[adv+1])
+		var json = Time.M.json;
+		var adv = Time.M.cfn;
+		Time.M.pfn = adv;
+		Time.C.shift = 1;
+		Time.V.blackflag = false;
+		Time.V.stopIterate = setTimeout(function(){
+			if (!Time.C.pause) Time.V.iterate()
+		}, Time.anim ? Time.delay : (100/Time.vel*Time.speed)+Time.delay);
+		if (json[adv+Time.C.shift] && !json[adv+Time.C.shift].load) {
+			clearInterval(Time.V.stopIterate);
+			Time.V.ready = false;
+			Time.V.blackflag = false;
+			Time.V.cacheImg(json[adv+Time.C.shift])
 		}
 	}
-	, next: function(frame) {
-		var json = Time.Model.json;
-		Time.Model.current.style.display = "block";
-		Time.View.showFrame(frame);
-		Time.View.hideFrame(json[Time.Model.cfn]);
-		Time.View.delay();
+	, next: function(adv) {
+		Time.V.showFrame(adv);
+		Time.V.hideFrame(adv);
+		Time.V.delay(adv);
 	}
-	, oAnim: function(frame,end) {
+	, oAnim: function(adv) {
 		var o = 0;
-		Time.Model.current.style.display = "block";
 		var sI = setInterval(function () {
-			var json = Time.Model.json;
-			Time.View.showFrame(frame,o,end);
-			if ((o += Time.vel + Time.Controller.blur) > 100) {
-				Time.View.hideFrame(json[Time.Model.cfn]);
+			Time.V.showFrame(adv,o,Time.M.cfn<Time.M.pfn);
+			if ((o += Time.vel + Time.C.blur) > 100) {
+				Time.V.hideFrame(adv);
 				clearInterval(sI);
-				Time.View.delay();
+				Time.V.delay(adv);
 			}
 		},Time.speed)
 	}
 	, cacheImg: function(img){
-		if (img.load) return false;
-		var limg = Time.View.addImage(img);
+		var limg = Time.V.addImage(img);
 		limg.onload = function() {
-			var json = Time.Model.json;
 			delete limg.onload;
+			var json = Time.M.json;
 			img.load = true;
-			if (!Time.View.ready && !Time.Controller.pause) {
-				Time.View.ready = true;
-				setTimeout(function(){Time.View.iterate()},500)
+			if (!Time.V.ready && !Time.C.pause) {
+				Time.V.ready = true;
+				Time.V.displayPStat(false);
+				setTimeout(function(){
+					clearInterval(Time.V.stopIterate);
+					Time.M.cfn -= 1;
+					Time.V.iterate();
+				},500)
 			}
-			if (json[img.num+1]) {
-				Time.View.cacheImg(json[img.num+1])
-			} else {
-				date2 = Date.now();
+			if (json[img.num+1] && !json[img.num+1].load) {
+				Time.V.cacheImg(json[img.num+1])
 			}
 		}
 	}
 	, iterate: function(){
-		var adv = (Time.Model.cfn < 1) ? 1 : Time.Model.cfn;
-		var json = Time.Model.json;
-		Time.View.cacheImg(json[adv]);
-		Time.View.blackflag = true;
-		if (!json[adv-1 == 0 ? adv-2 : adv-1] && Time.Model.start) {
-			Time.Model.setCurrent(json[adv]);
-			Time.View.showFrNum(json[adv]);
+		var json = Time.M.json;
+		Time.M.cfn += Time.C.shift;
+		if (Time.M.cfn > Time.M.json.length-1) {
+			Time.M.cfn = Time.M.json.length-1;
+			Time.M.pfn = 0;
+		} else if (Time.M.cfn < 1) {
+			Time.M.cfn = 1;
+			Time.M.pfn = 0;
+		}
+		var adv = Time.M.cfn;
+		if (json[adv] && !json[adv].load) {
+			Time.V.displayCStat();
+			Time.V.cacheImg(json[adv]);
+		} else {
+			Time.M.setCurrent();
+			Time.V.blackflag = true;
 			if (Time.anim){
-				Time.View.oAnim(json[adv]);
+				Time.V.oAnim(adv);
 			} else {
-				Time.View.next(json[adv]);
-			}
-		} else if (json[adv+1]) {
-			Time.Model.setCurrent(json[adv+1]);
-			Time.View.showFrNum(json[adv+1]);
-			if (Time.anim){
-				Time.View.oAnim(json[adv+1]);
-			} else {
-				Time.View.next(json[adv+1]);
+				Time.V.next(adv);
 			}
 		}
 	}
