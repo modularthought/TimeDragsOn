@@ -156,7 +156,6 @@ Time.V = {
 			}
 		},Time.speed)
 	}
-
 	, cacheImg: function(img){
 		var cimg = Time.V.addImage(img);
 		cimg.onload = function() {

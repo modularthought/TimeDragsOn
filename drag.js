@@ -1,12 +1,8 @@
 "use strict";
-
-
 Number.prototype.pad = function() {
 	var s = this.toString();
 	return (s.length < 4) ? ('000' + s).slice(-4) : s;
 }
-
-
 var Time = {
 	anim: false
 	
@@ -21,6 +17,5 @@ var Time = {
 		if (!xhr) return false;
 		Time.M.loadJSON("periods",Time.M.setPeriods);
 		Time.C.initlisten();
-
 	}
 }

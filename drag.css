@@ -18,20 +18,15 @@
 	min-width: 553px;
 	min-height: 395px;
 }
-
 svg {
 	overflow: visible;
 }
-
-
 #mframe #rectframe, #borderframe #brectframe {
 	fill: #fff; stroke: none;
 }
 #mframe #dialogue {
 	fill: #000; stroke: none;
 }
-
-
 #stitch_group g {
 	opacity: 0;
 	display: none;
@@ -42,8 +37,6 @@ svg {
 .stitch_bg {
 	fill: #000; stroke: #111; stroke-width: 1.5; stroke-opacity: 0.75;
 }
-
-
 image {
 	image-rendering: optimizeQuality;
 }
@@ -54,8 +47,6 @@ image {
 	display: none;
 	mask: url(drag.svg#mframe);
 }
-
-
 #border {
 	stroke: none;
 	
@@ -70,17 +61,13 @@ image {
 #bordercorner rect, #borderframe rect, #mframe rect, #border {
 	shape-rendering: crispEdges
 }
-
  
-
 .show {
 	display: block;
 }
 .hide {
 	display: none;
 }
-
-
 text {
 	font-family: 'xkcd-Regular','xkcd';
 }
@@ -96,8 +83,6 @@ text {
 .hilite_fill {
 	fill: #fff; stroke: none;
 }
-
-
 #periods {
 	position: absolute; bottom: 0;
 	margin: auto; cursor: pointer;
