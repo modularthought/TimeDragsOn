@@ -12,24 +12,36 @@ Time.V = {
 	, frames: document.getElementById('frames_group')
 	, addStitch: function(frame){
 		var screenW = screen.width, screenH = screen.height;
-		var imgS = document.createElementNS(Time.V.svg,'image')
-		, imgP = document.createElementNS(Time.V.svg,'polygon')
-		, imgG = document.createElementNS(Time.V.svg,'g');
-		imgP.setAttribute('points',
-			((533-screenW)/2)+','+frame.stitch_obj.y1+
-			' 0,'+frame.stitch_obj.y1+
-			' '+frame.stitch_obj.width+','+frame.stitch_obj.y2+
-			' '+(frame.stitch_obj.width+(screenW-533)/2)+','+frame.stitch_obj.y2+
-			' '+(frame.stitch_obj.width+(screenW-533)/2)+','+(frame.stitch_obj.height-(screenH-395)/2)+
-			' '+((533-screenW)/2)+','+(frame.stitch_obj.height-(screenH-395)/2));
+		var framesizex = 553, framesizey = 395;
+		var imgG = document.createElementNS(Time.V.svg,'g')
+		, imgP = document.createElementNS(Time.V.svg,'path')
+		, imgS;
+		imgP.setAttribute('d',
+		
+			'M'+((framesizex-screenW)/2-2)+','+frame.stitch_obj.y1+
+		
+			'L0,'+frame.stitch_obj.y1+
+		
+			'L'+(frame.stitch_obj.width || framesizex)+','+frame.stitch_obj.y2+
+		
+			'L'+((frame.stitch_obj.width || framesizex)+(screenW-framesizex)/2+2)+','+frame.stitch_obj.y2+
+		
+			'L'+((frame.stitch_obj.width || framesizex)+(screenW-framesizex)/2+2)+','+(framesizey+(screenH-framesizey)/2+2)+
+		
+			'L'+((framesizex-screenW)/2-2)+','+(framesizey+(screenH-framesizey)/2+2))+'Z';
+	
 		imgP.setAttribute('class','stitch_bg');
 		imgG.appendChild(imgP);
-		imgS.setAttributeNS(Time.V.xlink, 'href', 'img/'+frame.num.pad()+'_stitch.png');
-		imgS.setAttribute('x',frame.stitch_obj.x);
-		imgS.setAttribute('y',frame.stitch_obj.y);
-		imgS.setAttribute('width',frame.stitch_obj.width);
-		imgS.setAttribute('height',frame.stitch_obj.height);
-		imgG.appendChild(imgS);
+		if (frame.stitch_obj.width) {
+			imgS = document.createElementNS(Time.V.svg,'image')
+			imgS.setAttributeNS(Time.V.xlink, 'href', 'img/'+frame.num.pad()+'_stitch.png');
+			imgS.setAttribute('x',frame.stitch_obj.x);
+			imgS.setAttribute('y',frame.stitch_obj.y);
+			imgS.setAttribute('width',frame.stitch_obj.width);
+			imgS.setAttribute('height',frame.stitch_obj.height);
+			imgG.appendChild(imgS);
+			imgG.classList.add("sdrag");
+		}
 		imgG.setAttribute('id','imgs'+frame.num.pad());
 		imgG.setAttribute('transform','translate(0,0)')
 		Time.V.stitch.appendChild(imgG);
@@ -48,6 +60,9 @@ Time.V = {
 			);
 		if (frame.stitch) {
 			img.setAttribute('class','s'+frame.stitch);
+			if (Time.M.json[frame.stitch].stitch_obj.width) {
+				img.classList.add("sdrag");
+			}
 		}
 		img.setAttribute('id','imgf'+frame.num.pad());
 		Time.V.frames.appendChild(img);
@@ -76,6 +91,7 @@ Time.V = {
 		var json = Time.M.json;
 		var frame = json[adv]
 		document.getElementById('frame_text').firstChild.nodeValue = frame.num.pad();
+	
 		Time.V.centerText('tframe')
 	}
 	, showFrame: function(adv,o,prev){
@@ -97,7 +113,12 @@ Time.V = {
 	, hideFrame: function() {
 		var json = Time.M.json;
 		if (Time.M.pfn) {
+			console.log("previous: "+Time.M.pfn)
 			Time.M.previous.removeAttribute('style');
+		}
+		if (!json[Time.M.cfn].bg) document.getElementById('svg_time_drag').removeAttribute('style');
+		if (Time.M.currentS != Time.M.previousS && Time.M.previousS != '') {
+			Time.M.previousS.removeAttribute('style');
 		}
 	}
 	, delay: function() {
@@ -106,6 +127,9 @@ Time.V = {
 		Time.M.pfn = adv;
 		Time.C.shift = 1;
 		Time.V.blackflag = false;
+	
+	
+	
 		Time.V.stopIterate = setTimeout(function(){
 			if (!Time.C.pause) Time.V.iterate()
 		}, Time.anim ? Time.delay : (100/Time.vel*Time.speed)+Time.delay);
@@ -118,7 +142,7 @@ Time.V = {
 	}
 	, next: function(adv) {
 		Time.V.showFrame(adv);
-		Time.V.hideFrame(adv);
+		if(adv!=Time.M.pfn) Time.V.hideFrame(adv);
 		Time.V.delay(adv);
 	}
 	, oAnim: function(adv) {
@@ -126,17 +150,19 @@ Time.V = {
 		var sI = setInterval(function () {
 			Time.V.showFrame(adv,o,Time.M.cfn<Time.M.pfn);
 			if ((o += Time.vel + Time.C.blur) > 100) {
-				Time.V.hideFrame(adv);
+				if(adv!=Time.M.pfn) Time.V.hideFrame(adv);
 				clearInterval(sI);
 				Time.V.delay(adv);
 			}
 		},Time.speed)
 	}
+
 	, cacheImg: function(img){
-		var limg = Time.V.addImage(img);
-		limg.onload = function() {
-			delete limg.onload;
+		var cimg = Time.V.addImage(img);
+		cimg.onload = function() {
+			delete cimg.onload;
 			var json = Time.M.json;
+			
 			img.load = true;
 			if (!Time.V.ready && !Time.C.pause) {
 				Time.V.ready = true;
@@ -149,15 +175,33 @@ Time.V = {
 			}
 			if (json[img.num+1] && !json[img.num+1].load) {
 				Time.V.cacheImg(json[img.num+1])
+			} else {
+				date2 = Date.now();
+				console.log(date2-date1)
 			}
+		}
+	}
+	, epirate: function(){
+		if (Time.M.cfn < 3090 || Time.M.cfn < Time.M.json.length && Time.C.shift < 1) {
+			clearInterval(Time.V.stopIterate);
+			Time.M.cfn -= 1;
+			Time.M.epimode = false;
+			Time.V.iterate();
+		} else {
+			Time.M.epimode = true;
+			Time.M.cfn = Time.M.epilogue();
 		}
 	}
 	, iterate: function(){
 		var json = Time.M.json;
 		Time.M.cfn += Time.C.shift;
-		if (Time.M.cfn > Time.M.json.length-1) {
-			Time.M.cfn = Time.M.json.length-1;
-			Time.M.pfn = 0;
+		if (Time.M.epimode || Time.M.cfn > Time.M.json.length-1) {
+			if (true) {
+				Time.V.epirate();
+			} else {
+				Time.M.cfn = Time.M.json.length-1;
+				Time.M.pfn = 0;
+			}
 		} else if (Time.M.cfn < 1) {
 			Time.M.cfn = 1;
 			Time.M.pfn = 0;

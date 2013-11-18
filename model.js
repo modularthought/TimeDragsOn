@@ -1,8 +1,10 @@
 Time.M = {
-	start: true, current: '', previous: '', currentS: '', previousS: '', xhr: '', json: [[]], jperiod: []
-	, cfn: 0, pfn: 0, dotjson: 0, jsonlen: 15
+	start: true, current: '', previous: '', currentS: '', previousS: '', xhr: '', json: [[]], jperiod: [], ejson: {}
+	, cfn: 0, pfn: 0, dotjson: 0, jsonlen: 15, epimode: false
+	
 	, resX: 0, resY: 0
 	, load: function(){
+	
 		if (++Time.M.dotjson < Time.M.jsonlen) {
 			for (var i = Time.M.jperiod.eras[Time.M.dotjson-1][0]; i < Time.M.jperiod.eras[Time.M.dotjson][0]; i++) {
 				Time.V.addFrame(Time.M.json[i]);
@@ -10,6 +12,7 @@ Time.M = {
 					Time.V.addStitch(Time.M.json[i]);
 				}
 			};
+		
 			Time.M.loadJSON(Time.M.dotjson,Time.M.parseJSON);
 		} else {
 			for (var i = Time.M.jperiod.eras[Time.M.jperiod.eras.length-1][0]; i < Time.M.json.length; i++) {
@@ -18,7 +21,10 @@ Time.M = {
 					Time.V.addStitch(Time.M.json[i]);
 				}
 			};
+		
+		
 			Time.V.iterate();
+			Time.M.loadJSON("epilogue",Time.M.setEpilogue);
 		}
 	}
 	, loadJSON: function(json,fn){
@@ -35,15 +41,33 @@ Time.M = {
 		var parsed = JSON.parse(xhr.responseText)
 		if (Time.M.cfn == 0) {
 			Time.M.json[0].push(parsed[0].num)
+		
 		}
 		for (var i = 0; i < parsed.length; i++) {
+		
 			Time.M.json[parsed[i].num] = parsed[i];
 		}
+	
 		Time.M.load();
+	}
+	, setEpilogue: function(xhr){
+		var parsed = Time.M.ejson = JSON.parse(xhr.responseText)
+		for (var i = 0; i < 4; i++) {
+			for (var j = 0; j < 24; j++) {
+				Time.M.ejson["seq"+i][j] = parsed.def[parsed["seq"+i][j]];
+			}
+		}
+		for (var k = 0; k < parsed.use.length; k++) {
+			if (parsed.use[k][2]) {
+				Time.M.ejson.use[k][2] = parsed.def[parsed.use[k][2]];
+			}
+		}
+		Time.M.ejson.track = {use:0,fr:parsed.use[0][3],it:parsed.use[0][1],first:true};
 	}
 	, setPeriods: function(xhr){
 		var parsed = Time.M.jperiod = JSON.parse(xhr.responseText)
 		var period = document.getElementById('periods');
+		Time.M.loadJSON(Time.M.dotjson,Time.M.parseJSON);
 		for (var i = 0, j = 0, k = 0, il = parsed.eons.length; i < il; i++) {
 			var optN = document.createElementNS(Time.V.html,'option')
 			optN.setAttribute('class','eon eon'+i)
@@ -99,13 +123,39 @@ Time.M = {
 				Time.V.centerText('tperiod',true)
 			}
 		};
+		if (frame.bg) document.getElementById('svg_time_drag').style.backgroundColor = frame.bg;
 		if (frame.stitch) {
 			Time.M.previousS = Time.M.currentS;
 			Time.M.currentS = document.getElementById('imgs'+frame.stitch.pad())
+			Time.M.currentS.style.display = "block";
 		} else {
 			Time.M.currentS = '';
 		}
+		console.log('current: '+(Time.M.cfn))
 		Time.V.showFrNum(adv);
+	}
+	, epilogue: function() {
+	
+		var use = Time.M.ejson.track.use, diff, fr = Time.M.ejson.track.fr;
+		if (++Time.M.ejson.track.fr == 24) {
+			Time.M.ejson.track.fr = 0;
+			if (--Time.M.ejson.track.it == 0) {
+				if (++Time.M.ejson.track.use == Time.M.ejson.use.length) {
+				
+					Time.M.ejson.track.use = Time.M.ejson.use.length-4;
+				}
+				Time.M.ejson.track.fr = Time.M.ejson.use[Time.M.ejson.track.use][3]||0;
+				if (Time.M.ejson.use[Time.M.ejson.track.use][2]) {
+					diff = Time.M.ejson.use[Time.M.ejson.track.use][2];
+				}
+				Time.M.ejson.track.it = Time.M.ejson.use[Time.M.ejson.track.use][1];
+			}
+		}
+		if (Time.M.ejson.track.first) {
+			diff = Time.M.ejson.use[Time.M.ejson.track.use][2];
+			Time.M.ejson.track.first = false;
+		}
+		return diff || Time.M.ejson["seq"+use][fr];
 	}
 	, setTranslate: function(x,y) {
 		var translate = 'translate('+x+','+y+')';

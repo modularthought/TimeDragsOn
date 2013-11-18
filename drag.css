@@ -4,42 +4,61 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'xkcd-Regular';
+	src: local('?'), url('HumorSans.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
 #svg_time_drag {
-	background-color: inherit;
+	background-color: #fff;
 	margin: auto;
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
 	min-width: 553px;
 	min-height: 395px;
 }
+
 svg {
 	overflow: visible;
 }
+
+
 #mframe #rectframe, #borderframe #brectframe {
 	fill: #fff; stroke: none;
 }
 #mframe #dialogue {
 	fill: #000; stroke: none;
 }
+
+
 #stitch_group g {
 	opacity: 0;
+	display: none;
 }
+.sdrag {
+	cursor: pointer;
+`}
 .stitch_bg {
 	fill: #000; stroke: #111; stroke-width: 1.5; stroke-opacity: 0.75;
 }
+
+
 image {
 	image-rendering: optimizeQuality;
 }
 #images_group image {
-	cursor: pointer;
 }
 #frames_group image {
 	opacity: 0;
 	display: none;
 	mask: url(drag.svg#mframe);
 }
+
+
 #border {
 	stroke: none;
+	
 	fill: #000;
 }
 .bordermid {
@@ -51,14 +70,19 @@ image {
 #bordercorner rect, #borderframe rect, #mframe rect, #border {
 	shape-rendering: crispEdges
 }
+
+ 
+
 .show {
 	display: block;
 }
 .hide {
 	display: none;
 }
+
+
 text {
-	font-family: 'xkcd','xkcd-Regular';
+	font-family: 'xkcd-Regular','xkcd';
 }
 .text_outline {
 	fill: none; stroke: #fff; stroke-width: 3;
@@ -72,17 +96,19 @@ text {
 .hilite_fill {
 	fill: #fff; stroke: none;
 }
+
+
 #periods {
 	position: absolute; bottom: 0;
 	margin: auto; cursor: pointer;
 	left: 0; right: 0;
 	text-align: right; opacity: 0;
 }
-#periods option {
+#periods option, #p {
 	min-width: 250px; overflow: hidden;
 	text-align: left;
-	font-family: 'xkcd','xkcd-Regular';
-	font-size: 1em;
+	font-family: 'xkcd-Regular','xkcd';
+	font-size: 1.125em;
 }
 #periods option.eon {
 	font-weight: bolder; color: #fff; font-style: italic;

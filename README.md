@@ -18,6 +18,14 @@ This is best viewed in as large of a viewing area (i.e. full screen) as possible
 
 * * *
 
+Version 0.2.2
+-------------
+
+* endless epilogue mode activated at the end
+* cursor now shows up as a hand only when draggable
+* playback more stable
+* skipping more stable
+
 Version 0.2.1
 -------------
 
