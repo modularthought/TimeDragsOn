@@ -33,7 +33,7 @@ svg {
 }
 .sdrag {
 	cursor: pointer;
-`}
+}
 .stitch_bg {
 	fill: #000; stroke: #111; stroke-width: 1.5; stroke-opacity: 0.75;
 }
@@ -49,7 +49,6 @@ image {
 }
 #border {
 	stroke: none;
-	
 	fill: #000;
 }
 .bordermid {
@@ -61,7 +60,6 @@ image {
 #bordercorner rect, #borderframe rect, #mframe rect, #border {
 	shape-rendering: crispEdges
 }
- 
 .show {
 	display: block;
 }

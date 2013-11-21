@@ -2,7 +2,6 @@
 	{
 		"num": 2616,
 		"x": 0, "y": 0,
-		"start": true,
 		"epoch": "mpjpo0",
 		"hash": "ef9576dca5d3c5eef6e8b50217c94e50e542145655b5b4496f3ee81a581c85ca"
 	},
@@ -394,78 +393,100 @@
 	{
 		"num": 2681,
 		"x": 0, "y": 0,
+		"stitch_obj": {
+			"official": true,
+			"x": 0, "y": -2,
+			"width": 860,
+			"height": 397,
+			"x1": 0, "y1": 332.5,
+			"x2": 0, "y2": 258.5
+		},
+		"stitch": 2681,
 		"epoch": "mpoq80",
 		"hash": "851b2ef866f5345de55db220e6b0411d4b0d91ac4475153c33a379df84e64545"
 	},
 	{
 		"num": 2682,
 		"x": 0, "y": 0,
+		"stitch": 2681,
+		"stitch": 2681,
 		"epoch": "mpot00",
 		"hash": "a0ad21279e6cd464838e655148da18e3e40c49d03eb4d12b9f4c6751c77d9279"
 	},
 	{
 		"num": 2683,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpovs0",
 		"hash": "48f8a8430b34a2b26929477c60e12d509d94e601fb71f0230da89e2c5ac03944"
 	},
 	{
 		"num": 2684,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpoyk0",
 		"hash": "dcf2cb999a34643b15f98371d0585826b84417facd2f242575c475eddbb6c68a"
 	},
 	{
 		"num": 2685,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpp1c0",
 		"hash": "44745a8aaae6d7ebfe009b3ad4c62edbb53e7ca76576024c1b9805c85c6db284"
 	},
 	{
 		"num": 2686,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpp440",
 		"hash": "20f6e6946b918e189778d7e1314a6a78e31db1da227fdf96f9cad4534c180967"
 	},
 	{
 		"num": 2687,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpp6w0",
 		"hash": "6e43aae5c138149c49dee9db5e41898661b5d7635ea0068a25d54717f75bcb6d"
 	},
 	{
 		"num": 2688,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpp9o0",
 		"hash": "13dd279fd6e6da324f2317497de43f0f2bce7d171df8ae3c1493f158589fbcd0"
 	},
 	{
 		"num": 2689,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mppcg0",
 		"hash": "980a33d36c0d04ad7bbaf6221020ba7819520aead5fb2becf1afbf10b4b7966e"
 	},
 	{
 		"num": 2690,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mppf80",
 		"hash": "00e5bbba0d8bd989f76002227d79d418cc5ee7ad921f06146223f167c44f3d59"
 	},
 	{
 		"num": 2691,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mppi00",
 		"hash": "e95f01d9a699e1ad63dfa5f4e3b6df3e499ccb0a19b3251a60fc5d5ae428f36f"
 	},
 	{
 		"num": 2692,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mppks0",
 		"hash": "c83f2bac003d373449b0741a660f4dcc7b224c5c6413536474b6ac93312aca00"
 	},
 	{
 		"num": 2693,
 		"x": 0, "y": 0,
+		"bg": "#000",
 		"epoch": "mppnk0",
 		"hash": "37eef639d82148a1160232bb11578749ca54f81559659ca2f54aeae2abd0f8de"
 	},
@@ -473,126 +494,147 @@
 	{
 		"num": 2694,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mppqc0",
 		"hash": "a0168c4bc2c5c08fe75eab6100fbfce034895be3076c19dad317f2845525584b"
 	},
 	{
 		"num": 2695,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mppt40",
 		"hash": "67fb5b737bdb98c880751fcadc42639aedd23b3da32741df9e8b9ea9697c4d80"
 	},
 	{
 		"num": 2696,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mppvw0",
 		"hash": "0165b6aec5444a44c858bce4ab2a84cd906948e7e3fd1b6f6d4834d8d62895d4"
 	},
 	{
 		"num": 2697,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mppyo0",
 		"hash": "fca409b6e4a477608ce64d3a1f53e3699365fe24029eda26f527df120c837bcd"
 	},
 	{
 		"num": 2698,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpq1g0",
 		"hash": "a89be3c9b2fae56815112d8c22ea056d4d1ecd54d5b60e73158c3048d098afe0"
 	},
 	{
 		"num": 2699,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpq480",
 		"hash": "0981ad83c9c18b55b03bdcb47f7ce51374b9474ad6a3b1caa3c40dcfcd66fc8d"
 	},
 	{
 		"num": 2700,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpq700",
 		"hash": "ba1adf0dacd40ed45e9cbd81545c8bae285ddab592049925a6971a26674c5f5c"
 	},
 	{
 		"num": 2701,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpq9s0",
 		"hash": "1f9e9b30575d603fbef670788c9af98538fd8a8c6d63504c692551fe76b67db9"
 	},
 	{
 		"num": 2702,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpqck0",
 		"hash": "6f1d91330184d00fb230f2eafb69595eb112361d4bf311e9f1e08d0d4953fba5"
 	},
 	{
 		"num": 2703,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpqfc0",
 		"hash": "a0db2ab6885d001714f561702d493ce0d8ffea4951b42d0cf6aede468e8787e2"
 	},
 	{
 		"num": 2704,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpqi40",
 		"hash": "dcc93d941eebc76768da258fd7df3884c43f87ad35a1221b1426fcba29241b07"
 	},
 	{
 		"num": 2705,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpqkw0",
 		"hash": "a4751288cefffc240307d1965a25316a22cedb90e2869df42921d1d08e3e045f"
 	},
 	{
 		"num": 2706,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpqno0",
 		"hash": "640a7f4b8cc716409a03d9573e73c66a6d485855322c5507e214010704eaaa1c"
 	},
 	{
 		"num": 2707,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpqqg0",
 		"hash": "eda0553909ab29689acd39c71066fc72aa67e080fd5a0ec4f68634aebc7f7a6e"
 	},
 	{
 		"num": 2708,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpqt80",
 		"hash": "acd1a7dd84e65f1d661df50c227b3ec29e82b7197a2209cbc993e18b465eaea7"
 	},
 	{
 		"num": 2709,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpqw00",
 		"hash": "db9a4ba208d5b0933783da3cae614ea9ba0563fd5b95dad3b4aa20c5914be903"
 	},
 	{
 		"num": 2710,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpqys0",
 		"hash": "cf7e0bb081e936e55352675ec2d6beadab6ee2285529c65f0ffd4c607a1d5082"
 	},
 	{
 		"num": 2711,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpr1k0",
 		"hash": "a6241156646408c2e4f7020df2d1256a063cc3a1e1c128ff02f638fe2a9b3600"
 	},
 	{
 		"num": 2712,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpr4c0",
 		"hash": "c5224abb8ef4298881e2223727fbdf61150ab2aa20310ca3aacdd56dc5b49e8f"
 	},
 	{
 		"num": 2713,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpr740",
 		"hash": "550326fac470dbfa45a18d5dcd2f085174c2de022601998c046e7d1e1e5c8ef0"
 	},
 	{
 		"num": 2714,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpr9w0",
 		"hash": "bd0ca2be71a89cb9044cfae7314283dbac90e6185dd57bd47c444995d16f9b98"
 	},
@@ -600,138 +642,161 @@
 	{
 		"num": 2715,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mprco0",
 		"hash": "58ac2796d256ae71967f98d6a4f425eb74430f110eecad6a22543e41b7c1d71b"
 	},
 	{
 		"num": 2716,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mprfg0",
 		"hash": "cd6d5ee1971ece41b814ae5da657b602e9afa5c531ac6e563b9a8d05d7311047"
 	},
 	{
 		"num": 2717,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpri80",
 		"hash": "cc19c51c79e7729fee2d3c8fdbafbb10253e803da0d98fe6527721d9c40d1bc3"
 	},
 	{
 		"num": 2718,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mprl00",
 		"hash": "53515585e76966ade635fc0b4a14b1f629c76039faeec676fbb5ba1adf8a888a"
 	},
 	{
 		"num": 2719,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mprns0",
 		"hash": "9629627d8e74ed2124214c0c24846e864bc09e952256412a7ea9f416b037cd24"
 	},
 	{
 		"num": 2720,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mprqk0",
 		"hash": "6722423237282d1b9d8e5ec9a881f8098cbb4c4209dd2529f40152c4754ca287"
 	},
 	{
 		"num": 2721,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mprtc0",
 		"hash": "22f7c0e5c1785f7686e0712e39cd2f3892a76a94e3371d84cdfe4bd0dc754dce"
 	},
 	{
 		"num": 2722,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mprw40",
 		"hash": "15f36af8fd8295793fee7098632ec9e65a6cd49898f2088204e5c157d4d5024c"
 	},
 	{
 		"num": 2723,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpryw0",
 		"hash": "c5e2893caca203afd514dff9555e4f1aa73a3941d22ffb74e0fd4ef04a5fe9e8"
 	},
 	{
 		"num": 2724,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mps1o0",
 		"hash": "c5d94c9d33c6663e8526e05dcd62f16acfa6782cd7b95822eee01c39f8fdb8cc"
 	},
 	{
 		"num": 2725,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mps4g0",
 		"hash": "de315949a515bebed9b3a5d866997146b15ad67011f1b6b024ba7cf0626e3dc5"
 	},
 	{
 		"num": 2726,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mps780",
 		"hash": "f2bd8d1ef50e474e82e2ea80000fc14ee3c432eef43b6e1799b862f5be280ba3"
 	},
 	{
 		"num": 2727,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpsa00",
 		"hash": "c09c09d1bf255dcd08760ac4024620af45e3122f5707027ca4a610f5f2206720"
 	},
 	{
 		"num": 2728,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpscs0",
 		"hash": "00fe3147f5cdc2a76b19e2ff2bad943c53f2f249e75862249403394be8e90ed1"
 	},
 	{
 		"num": 2729,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpsfk0",
 		"hash": "551fa12a924cc3cd6bd3278ad81044d56160b8f8de5a5408fd8c2ff89c0b0f2f"
 	},
 	{
 		"num": 2730,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpsic0",
 		"hash": "c54a8f6d595309bedeace4d8e65e12c7ed88138db4a59e426c2f4120614732b3"
 	},
 	{
 		"num": 2731,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpsl40",
 		"hash": "5ec00f8dda5ba67f784ed3a54cc065e899e44a26a9c0282af0e58fde098a08b5"
 	},
 	{
 		"num": 2732,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpsnw0",
 		"hash": "cebc2dcacf8dd687e43b809b2855853c50af1e34436d5c28e43ea027c038d181"
 	},
 	{
 		"num": 2733,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpsqo0",
 		"hash": "223759e444e5e0a32d411f2fe963bec86331c3e7d448856c50f7fded20f9a0e9"
 	},
 	{
 		"num": 2734,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpstg0",
 		"hash": "3b60743ea0757ce3844e47dd16e09eda0e12baad9f379809efbfba1d7f7fa83f"
 	},
 	{
 		"num": 2735,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpsw80",
 		"hash": "6e9003a7bd5c08cf99af000fa8eedd10593b2af5a6bd2733804440b886fc06e7"
 	},
 	{
 		"num": 2736,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpsz00",
 		"hash": "f46e25c5e48787a67785d8f0c5575427aad925a571a355da88b49299b926460a"
 	},
 	{
 		"num": 2737,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpt1s0",
 		"hash": "80baf40045107b0a897e619188c7ee42aa129533a30189f28ecc53c15bf55830"
 	},
@@ -739,72 +804,92 @@
 	{
 		"num": 2738,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpt4k0",
 		"hash": "65f87dfc3245d57b7fd41b6f3500e2d88778f66bf7dc337be3e4bd0aa737dfa7"
 	},
 	{
 		"num": 2739,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpt7c0",
 		"hash": "e45ffd7401b6dcd6aea5df5f44db35010bed3f99105c800198ef1dfca147f945"
 	},
 	{
 		"num": 2740,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mpta40",
 		"hash": "29d9acb6479a7923f8726180d4f33bcc07cbb08cda27c2395af4cc308511ba0b"
 	},
 	{
 		"num": 2741,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mptcw0",
 		"hash": "326f1c10ef465d2a9068cebe51ccfbc52c1bfbb89721a126a9e09de6199f8ef0"
 	},
 	{
 		"num": 2742,
 		"x": 0, "y": 0,
+		"stitch": 2681,
 		"epoch": "mptfo0",
 		"hash": "cf7522990a51aa550d58d21652b51c1bfd362bb80756aff21bdd7720647f4d18"
 	},
 	{
 		"num": 2743,
-		"x": 0, "y": 0,
+		"x": 262, "y": 0,
+		"stitch_obj": {
+			"official": true,
+			"x": 0, "y": -39,
+			"width": 811,
+			"height": 433,
+			"x1": 0, "y1": 64.5,
+			"x2": 0, "y2": 385.5
+		},
+		"stitch": 2743,
 		"epoch": "mptig0",
 		"hash": "dd5311eb5ec9cb837fbbd55dad07930d0a7221b1200b0e4466ca943405e8727f"
 	},
 	{
 		"num": 2744,
-		"x": 0, "y": 0,
+		"x": 262, "y": 0,
+		"stitch": 2743,
 		"epoch": "mptl80",
 		"hash": "968949fd393e03d6edf399251ddf1ce7fe31a91b7e639bb6961b9a030fae96fd"
 	},
 	{
 		"num": 2745,
-		"x": 0, "y": 0,
+		"x": 262, "y": 0,
+		"stitch": 2743,
 		"epoch": "mpto00",
 		"hash": "f8c459470a2b1c621cd857429a597928c7da5bce2c6d39f5c234c70403c68179"
 	},
 	{
 		"num": 2746,
-		"x": 0, "y": 0,
+		"x": 262, "y": 0,
+		"stitch": 2743,
 		"epoch": "mptqs0",
 		"hash": "5938a4cd81df51e154220e8dd79c9bd6b5d18eb11bd18f41a038e7a537432287"
 	},
 	{
 		"num": 2747,
-		"x": 0, "y": 0,
+		"x": 262, "y": 0,
+		"stitch": 2743,
 		"epoch": "mpttk0",
 		"hash": "efe3892d12964ff9ab4773ab99963e46db5404deb2d22186d5ccbb116cb4b619"
 	},
 	{
 		"num": 2748,
-		"x": 0, "y": 0,
+		"x": 262, "y": 0,
+		"stitch": 2743,
 		"epoch": "mptwc0",
 		"hash": "4db2a4716f97f1f0e6ab4dcc1962a6e5e2a5aba172ebc1a5c6ce5231cbada154"
 	},
 	{
 		"num": 2749,
-		"x": 0, "y": 0,
+		"x": 262, "y": 0,
+		"stitch": 2743,
 		"epoch": "mptz40",
 		"hash": "83d7f7f74c07026a63dd18c1566d56d1ea1c67348b96c4a76cd29262c78944c4"
 	},
@@ -871,54 +956,71 @@
 	{
 		"num": 2760,
 		"x": 0, "y": 0,
+		"stitch_obj": {
+			"official": true,
+			"x": 0, "y": -4,
+			"width": 696,
+			"height": 399,
+			"x1": 0, "y1": 342.5,
+			"x2": 0, "y2": 292.5
+		},
+		"stitch": 2760,
 		"epoch": "mputo0",
 		"hash": "687d87f23e28a34cd38b60dfbd181cebf8b11d444cc82df6a9e4444ae513673c"
 	},
 	{
 		"num": 2761,
 		"x": 0, "y": 0,
+		"stitch": 2760,
 		"epoch": "mpuwg0",
 		"hash": "ed23f7e6c4e024a9498ebee65ddae91a556d3052eb31c561132f7b169e16c7db"
 	},
 	{
 		"num": 2762,
 		"x": 0, "y": 0,
+		"stitch": 2760,
 		"epoch": "mpuz80",
 		"hash": "6654eda7eea4d0cd755326a6de0689fa60222c87facd4e0765e21586faf8b89f"
 	},
 	{
 		"num": 2763,
 		"x": 0, "y": 0,
+		"stitch": 2760,
 		"epoch": "mpv200",
 		"hash": "8c2ff9e6a3633d86dd8569dd657a382ecdd6733e66428c0231808d06ea463267"
 	},
 	{
 		"num": 2764,
 		"x": 0, "y": 0,
+		"stitch": 2760,
 		"epoch": "mpv4s0",
 		"hash": "c04b58b55e4ea93b04f1cec73db8a81f4aab945747556ec8e1ae753c4c51ebf0"
 	},
 	{
 		"num": 2765,
 		"x": 0, "y": 0,
+		"stitch": 2760,
 		"epoch": "mpv7k0",
 		"hash": "dc670aa813daa0e4c147fc6e8f4a0268a78d2bea227f6d8dc5e2411cf737fbcd"
 	},
 	{
 		"num": 2766,
 		"x": 0, "y": 0,
+		"stitch": 2760,
 		"epoch": "mpvac0",
 		"hash": "5708466be7333542bb5deb2b8356bd753a11f552b72b5d1d5b2d249ac596b790"
 	},
 	{
 		"num": 2767,
 		"x": 0, "y": 0,
+		"stitch": 2760,
 		"epoch": "mpvd40",
 		"hash": "328cdfefec32c8dc7de13f1d1286dd939324ffff027f1d5e719cc9612b0c2ffc"
 	},
 	{
 		"num": 2768,
 		"x": 0, "y": 0,
+		"stitch": 2760,
 		"epoch": "mpvfw0",
 		"hash": "1a90b6fe99178cf400e8db87d4d3fbf1307fd01767b56cf10153c3839a9b838d"
 	},
@@ -1191,7 +1293,6 @@
 	{
 		"num": 2813,
 		"x": 0, "y": 0,
-		"end": true,
 		"epoch": "mpyww0",
 		"hash": "4bc51cddab902935432ed796130438ea12b6805fe928f09bafca5cb7c2b2a833"
 	}

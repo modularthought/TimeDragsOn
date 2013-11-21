@@ -2,43 +2,49 @@
 	{
 		"num": 2921,
 		"x": 0, "y": 0,
-		"start": true,
+		"bg": "#000",
 		"epoch": "mq78w0",
 		"hash": "12cc74d3dcaff2af05ad44753fad5bfaf608568102196de426708bd5edd468e6"
 	},
 	{
 		"num": 2922,
 		"x": 0, "y": 0,
+		"bg": "#000",
 		"epoch": "mq7bo0",
 		"hash": "7bfea2aff7ca67125d9bf39bdf5bf9551a8264d911a4db1fd98a06f772749cc9"
 	},
 	{
 		"num": 2923,
 		"x": 0, "y": 0,
+		"bg": "#000",
 		"epoch": "mq7eg0",
 		"hash": "4d86d2fb49427946cbcdb16f48f1d1e82c74ccf49f1faf8da5bc1684b0340fd7"
 	},
 	{
 		"num": 2924,
 		"x": 0, "y": 0,
+		"bg": "#000",
 		"epoch": "mq7h80",
 		"hash": "e9d986ff7d1b6fa746a0f098de41a24239cb8575f5333b74f09d3eb7d0f9b84b"
 	},
 	{
 		"num": 2925,
 		"x": 0, "y": 0,
+		"bg": "#000",
 		"epoch": "mq7k00",
 		"hash": "d492fd164255822d19f5ddab8c7654bedd8c0e88e7d185e4e5ace460032f5c11"
 	},
 	{
 		"num": 2926,
 		"x": 0, "y": 0,
+		"bg": "#000",
 		"epoch": "mq7ms0",
 		"hash": "c56b5085198dd1842e84825bf9fdffa37e5eea98ca8d17cd4a092f124fe1dea7"
 	},
 	{
 		"num": 2927,
 		"x": 0, "y": 0,
+		"bg": "#000",
 		"epoch": "mq7pk0",
 		"hash": "d24339a5ae574cf11a74a9b9686c8fd5af91a743adc69e07767fdaf93270464a"
 	},
@@ -140,7 +146,8 @@
 	},
 	{
 		"num": 2944,
-		"x": 0, "y": 0,
+		"x": 145, "y": -6,
+		"stitch": 2760,
 		"epoch": "mq90s0",
 		"hash": "f7df3c1ccdbde935a49c7654c3550da8e9776b394ad8d4946e67e6d9a88174a9"
 	},
@@ -170,19 +177,22 @@
 	},
 	{
 		"num": 2949,
-		"x": 0, "y": 0,
+		"x": 0, "y": -43,
+		"stitch": 2743,
 		"epoch": "mq9eo0",
 		"hash": "f9150cc0e47a80403aef87a24938bdf9695f6404298dbde1e487b39a5eaeafae"
 	},
 	{
 		"num": 2950,
-		"x": 0, "y": 0,
+		"x": 0, "y": -43,
+		"stitch": 2743,
 		"epoch": "mq9hg0",
 		"hash": "27e7505c65fb00ef26519312977c20dc259cf1875e772af672e83e43c0e4d81a"
 	},
 	{
 		"num": 2951,
 		"x": 0, "y": 0,
+		"bg": "#000",
 		"epoch": "mq9k80",
 		"hash": "f00e47717b33b7c3deaf52ae60a5d8890f1beabe2a1e664b8b74a039f64d8613"
 	},
@@ -206,37 +216,43 @@
 	},
 	{
 		"num": 2955,
-		"x": 0, "y": 0,
+		"x": 311, "y": -6,
+		"stitch": 2681,
 		"epoch": "mq9vc0",
 		"hash": "db43a089af2d2888a64a448edb1a3b01ac95f001599d3198d14492a97cda84c1"
 	},
 	{
 		"num": 2956,
-		"x": 0, "y": 0,
+		"x": 311, "y": -6,
+		"stitch": 2681,
 		"epoch": "mq9y40",
 		"hash": "829b330be549e1dad26b8412a5258f3803bcc5e869a2aa8de0dbafc903bea730"
 	},
 	{
 		"num": 2957,
-		"x": 0, "y": 0,
+		"x": 311, "y": -6,
+		"stitch": 2681,
 		"epoch": "mqa0w0",
 		"hash": "8d22d3d2d1722f9689168b2c020c760290a32b2bc4106fcd1bf14ceb5c717dc4"
 	},
 	{
 		"num": 2958,
-		"x": 0, "y": 0,
+		"x": 311, "y": -6,
+		"stitch": 2681,
 		"epoch": "mqa3o0",
 		"hash": "6389ad5d4dd6da7c21d4fa807289f7d3901ec8d8423341cc7d8e23550566f20c"
 	},
 	{
 		"num": 2959,
-		"x": 0, "y": 0,
+		"x": 311, "y": -6,
+		"stitch": 2681,
 		"epoch": "mqa6g0",
 		"hash": "e0e9ae66a3e5cac344f3641988bdca22fe910da0255790842858dafa0d620c3f"
 	},
 	{
 		"num": 2960,
-		"x": 0, "y": 0,
+		"x": 311, "y": -6,
+		"stitch": 2681,
 		"epoch": "mqa980",
 		"hash": "3e6f1ecaac1d84120eb72aef0ad0a1f8bb47602bcac349f4a6ce8c0cff4cc7a4"
 	},
@@ -296,7 +312,8 @@
 	},
 	{
 		"num": 2970,
-		"x": 0, "y": 0,
+		"x": 364, "y": -202,
+		"stitch": 2552,
 		"epoch": "mqb100",
 		"hash": "c6b85e16aad1ead91e0ad5a6515e715e0639efb97040c6e1ac6985fea857122a"
 	},
@@ -308,13 +325,15 @@
 	},
 	{
 		"num": 2972,
-		"x": 0, "y": 0,
+		"x": 62, "y": -26,
+		"stitch": 2349,
 		"epoch": "mqb6k0",
 		"hash": "baa8b481f152f5cab828946b688cfd9246a6121fc6db029553b46af42cc35b4a"
 	},
 	{
 		"num": 2973,
-		"x": 0, "y": 0,
+		"x": 62, "y": -26,
+		"stitch": 2349,
 		"epoch": "mqb9c0",
 		"hash": "904cb8e8d46ffad78c609f86ddf08b6ffd3bd2d5937ef6fbd321c7350ac32bb8"
 	},
@@ -375,24 +394,28 @@
 	{
 		"num": 2983,
 		"x": 0, "y": 0,
+		"stitch": 2066,
 		"epoch": "mqc140",
 		"hash": "05a0c7d10de324428262c5078e40e4ce90f6b23e68f0269dbcf8bbc623b28156"
 	},
 	{
 		"num": 2984,
 		"x": 0, "y": 0,
+		"stitch": 2066,
 		"epoch": "mqc3w0",
 		"hash": "90b84508e5947ed68ccacf62d125f90555099037bdab2cd0c67c8274b48a62cb"
 	},
 	{
 		"num": 2985,
-		"x": 0, "y": 0,
+		"x": 201, "y": -42,
+		"stitch": 2015,
 		"epoch": "mqc6o0",
 		"hash": "6fd2ad93aff816f89cd7433adbf8d77467c37b680c1e2aeb0b7870b08074a31a"
 	},
 	{
 		"num": 2986,
-		"x": 0, "y": 0,
+		"x": 201, "y": -42,
+		"stitch": 2015,
 		"epoch": "mqc9g0",
 		"hash": "4a979b597f7d7216356aba7036c3b33b4359b925c9b3553370d9fe9191ea7bb4"
 	},
@@ -616,6 +639,7 @@
 	{
 		"num": 3023,
 		"x": 0, "y": 0,
+		"bg": "#000",
 		"epoch": "mqf480",
 		"hash": "fdd832197dc9aed80a02c47132b66b17d4b760f2411a1fdf988352e59919ac24"
 	},
@@ -701,6 +725,7 @@
 	{
 		"num": 3037,
 		"x": 0, "y": 0,
+		"bg": "#000",
 		"epoch": "mqg740",
 		"hash": "9ef6743fa1c9f42f4839d884a202c3b6b2500986a73e7811bcb4767291fdd927"
 	},
@@ -1044,7 +1069,6 @@
 	{
 		"num": 3094,
 		"x": 0, "y": 0,
-		"end": true,
 		"epoch": "mqklg0",
 		"hash": "f9285e7e40d7b47d9d6a3bc37216cc4199a5ab8adc23c3ea94596858b17d4496"
 	}

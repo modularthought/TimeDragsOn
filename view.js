@@ -17,33 +17,24 @@ Time.V = {
 		, imgP = document.createElementNS(Time.V.svg,'path')
 		, imgS;
 		imgP.setAttribute('d',
-		
-			'M'+((framesizex-screenW)/2-2)+','+frame.stitch_obj.y1+
-		
+			'M'+((framesizex-screenW)/2-frame.stitch_obj.x-4)+','+frame.stitch_obj.y1+
 			'L0,'+frame.stitch_obj.y1+
-		
 			'L'+(frame.stitch_obj.width || framesizex)+','+frame.stitch_obj.y2+
-		
-			'L'+((frame.stitch_obj.width || framesizex)+(screenW-framesizex)/2+2)+','+frame.stitch_obj.y2+
-		
-			'L'+((frame.stitch_obj.width || framesizex)+(screenW-framesizex)/2+2)+','+(framesizey+(screenH-framesizey)/2+2)+
-		
-			'L'+((framesizex-screenW)/2-2)+','+(framesizey+(screenH-framesizey)/2+2))+'Z';
-	
+			'L'+((frame.stitch_obj.width || framesizex)+(screenW-framesizex)/2+frame.stitch_obj.x+2)+','+frame.stitch_obj.y2+
+			'L'+((frame.stitch_obj.width || framesizex)+(screenW-framesizex)/2+frame.stitch_obj.x+2)+','+(framesizey+(screenH-framesizey)/2+frame.stitch_obj.y*-1+2)+
+			'L'+((framesizex-screenW)/2-frame.stitch_obj.x-4)+','+(framesizey+(screenH-framesizey)/2+frame.stitch_obj.y*-1+2))+'Z';
 		imgP.setAttribute('class','stitch_bg');
 		imgG.appendChild(imgP);
 		if (frame.stitch_obj.width) {
 			imgS = document.createElementNS(Time.V.svg,'image')
-			imgS.setAttributeNS(Time.V.xlink, 'href', 'img/'+frame.num.pad()+'_stitch.png');
-			imgS.setAttribute('x',frame.stitch_obj.x);
-			imgS.setAttribute('y',frame.stitch_obj.y);
+			imgS.setAttributeNS(Time.V.xlink, 'href', 'img/s'+frame.num.pad()+'.png');
 			imgS.setAttribute('width',frame.stitch_obj.width);
 			imgS.setAttribute('height',frame.stitch_obj.height);
 			imgG.appendChild(imgS);
 			imgG.classList.add("sdrag");
 		}
 		imgG.setAttribute('id','imgs'+frame.num.pad());
-		imgG.setAttribute('transform','translate(0,0)')
+		imgG.setAttribute('transform','translate('+(frame.stitch_obj.x+2)+','+(frame.stitch_obj.y-2)+')')
 		Time.V.stitch.appendChild(imgG);
 	}
 	, addFrame: function(frame){
@@ -91,7 +82,6 @@ Time.V = {
 		var json = Time.M.json;
 		var frame = json[adv]
 		document.getElementById('frame_text').firstChild.nodeValue = frame.num.pad();
-	
 		Time.V.centerText('tframe')
 	}
 	, showFrame: function(adv,o,prev){
@@ -102,18 +92,22 @@ Time.V = {
 			Time.M.setTranslate(Time.M.resX,Time.M.resY);
 			Time.M.currentS.style.opacity = (o >= 0 && o <= 100) ? o/100 : 1;
 		}
-		if (Time.M.currentS != Time.M.previousS && Time.M.previousS != ''
-			&& Time.M.previousS.style.opacity == 1) {
+		if (Time.M.previousS != '' &&
+			Time.M.currentS != Time.M.previousS &&
+			Time.M.previousS.style.opacity == 1) {
 			end = true;
-			Time.M.setTranslate(Time.M.resX,Time.M.resY);
-			if (Time.M.currentS || Time.M.previousS) (Time.M.currentS || Time.M.previousS).style.opacity = (end && (o >= 0 && o <= 100)) ? (100-o)/100 : 0;
+			if (Time.M.previousS) {
+				Time.M.previousS.style.opacity = (end && (o >= 0 && o <= 100)) ? (100-o)/100 : 0;
+			}
 		}
-		Time.M.current.style.opacity = (end) ? (100-o)/100 : (o >= 0 && o <= 100) ? o/100 : 1;
+		if (Time.M.currentS != Time.M.previousS){
+			Time.M.setTranslate(Time.M.resX,Time.M.resY);
+		}
+		Time.M.current.style.opacity = (end && (o >= 0 && o <= 100)) ? (100-o)/100 : (o >= 0 && o <= 100) ? o/100 : 1;
 	}
 	, hideFrame: function() {
 		var json = Time.M.json;
 		if (Time.M.pfn) {
-			console.log("previous: "+Time.M.pfn)
 			Time.M.previous.removeAttribute('style');
 		}
 		if (!json[Time.M.cfn].bg) document.getElementById('svg_time_drag').removeAttribute('style');
@@ -125,11 +119,9 @@ Time.V = {
 		var json = Time.M.json;
 		var adv = Time.M.cfn;
 		Time.M.pfn = adv;
+		Time.M.setPrevious();
 		Time.C.shift = 1;
 		Time.V.blackflag = false;
-	
-	
-	
 		Time.V.stopIterate = setTimeout(function(){
 			if (!Time.C.pause) Time.V.iterate()
 		}, Time.anim ? Time.delay : (100/Time.vel*Time.speed)+Time.delay);
@@ -161,7 +153,6 @@ Time.V = {
 		cimg.onload = function() {
 			delete cimg.onload;
 			var json = Time.M.json;
-			
 			img.load = true;
 			if (!Time.V.ready && !Time.C.pause) {
 				Time.V.ready = true;
@@ -176,7 +167,6 @@ Time.V = {
 				Time.V.cacheImg(json[img.num+1])
 			} else {
 				date2 = Date.now();
-				console.log(date2-date1)
 			}
 		}
 	}

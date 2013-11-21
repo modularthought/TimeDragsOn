@@ -1,10 +1,8 @@
 Time.M = {
 	start: true, current: '', previous: '', currentS: '', previousS: '', xhr: '', json: [[]], jperiod: [], ejson: {}
 	, cfn: 0, pfn: 0, dotjson: 0, jsonlen: 15, epimode: false
-	
 	, resX: 0, resY: 0
 	, load: function(){
-	
 		if (++Time.M.dotjson < Time.M.jsonlen) {
 			for (var i = Time.M.jperiod.eras[Time.M.dotjson-1][0]; i < Time.M.jperiod.eras[Time.M.dotjson][0]; i++) {
 				Time.V.addFrame(Time.M.json[i]);
@@ -12,7 +10,6 @@ Time.M = {
 					Time.V.addStitch(Time.M.json[i]);
 				}
 			};
-		
 			Time.M.loadJSON(Time.M.dotjson,Time.M.parseJSON);
 		} else {
 			for (var i = Time.M.jperiod.eras[Time.M.jperiod.eras.length-1][0]; i < Time.M.json.length; i++) {
@@ -21,8 +18,6 @@ Time.M = {
 					Time.V.addStitch(Time.M.json[i]);
 				}
 			};
-		
-		
 			Time.V.iterate();
 			Time.M.loadJSON("epilogue",Time.M.setEpilogue);
 		}
@@ -41,13 +36,10 @@ Time.M = {
 		var parsed = JSON.parse(xhr.responseText)
 		if (Time.M.cfn == 0) {
 			Time.M.json[0].push(parsed[0].num)
-		
 		}
 		for (var i = 0; i < parsed.length; i++) {
-		
 			Time.M.json[parsed[i].num] = parsed[i];
 		}
-	
 		Time.M.load();
 	}
 	, setEpilogue: function(xhr){
@@ -125,23 +117,27 @@ Time.M = {
 		};
 		if (frame.bg) document.getElementById('svg_time_drag').style.backgroundColor = frame.bg;
 		if (frame.stitch) {
-			Time.M.previousS = Time.M.currentS;
 			Time.M.currentS = document.getElementById('imgs'+frame.stitch.pad())
 			Time.M.currentS.style.display = "block";
 		} else {
 			Time.M.currentS = '';
 		}
-		console.log('current: '+(Time.M.cfn))
 		Time.V.showFrNum(adv);
 	}
+	, setPrevious: function(){
+		var json = Time.M.json;
+		var adv = Time.M.cfn;
+		var frame = json[adv]
+		if (frame.stitch) {
+			Time.M.previousS = Time.M.currentS;
+		}
+	}
 	, epilogue: function() {
-	
-		var use = Time.M.ejson.track.use, diff, fr = Time.M.ejson.track.fr;
+		var use = Time.M.ejson.use[Time.M.ejson.track.use][0], diff, fr = Time.M.ejson.track.fr;
 		if (++Time.M.ejson.track.fr == 24) {
 			Time.M.ejson.track.fr = 0;
 			if (--Time.M.ejson.track.it == 0) {
 				if (++Time.M.ejson.track.use == Time.M.ejson.use.length) {
-				
 					Time.M.ejson.track.use = Time.M.ejson.use.length-4;
 				}
 				Time.M.ejson.track.fr = Time.M.ejson.use[Time.M.ejson.track.use][3]||0;
@@ -155,7 +151,7 @@ Time.M = {
 			diff = Time.M.ejson.use[Time.M.ejson.track.use][2];
 			Time.M.ejson.track.first = false;
 		}
-		return diff || Time.M.ejson["seq"+use][fr];
+		return diff || Time.M.ejson[use][fr];
 	}
 	, setTranslate: function(x,y) {
 		var translate = 'translate('+x+','+y+')';

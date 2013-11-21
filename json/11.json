@@ -129,11 +129,12 @@
 		"num": 2552,
 		"x": 0, "y": 0,
 		"stitch_obj": {
-			"x": 2, "y": -299,
+			"official": true,
+			"x": 0, "y": -297,
 			"width": 1036,
 			"height": 692,
-			"x1": 0, "y1": 315.5,
-			"x2": 0, "y2": 34.5
+			"x1": 0, "y1": 614.5,
+			"x2": 0, "y2": 334.5
 		},
 		"stitch": 2552,
 		"epoch": "mperw0",
@@ -556,18 +557,26 @@
 	{
 		"num": 2612,
 		"x": 0, "y": 0,
+		"stitch_obj": {
+			"x": 0, "y": 0,
+			"x1": 0, "y1": 180.5,
+			"x2": 0, "y2": 181.5
+		},
+		"stitch": 2612,
 		"epoch": "mpjek0",
 		"hash": "7cecd7f50f294c7ecf39953522854e17775d17dbf86981c7b379d6df713fd658"
 	},
 	{
 		"num": 2613,
 		"x": 0, "y": 0,
+		"stitch": 2612,
 		"epoch": "mpjhc0",
 		"hash": "7c2c0fd368387ecca4c34fac2642b1be15e3f19038ee4c37b96f59fe3d141639"
 	},
 	{
 		"num": 2614,
 		"x": 0, "y": 0,
+		"stitch": 2612,
 		"epoch": "mpjk40",
 		"hash": "13069a2df9d2b962fca4a1ff29f4c93affc08d7a576fc17028ba6955d3c21a9c"
 	},

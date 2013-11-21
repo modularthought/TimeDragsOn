@@ -14,9 +14,16 @@ Features:
 * panorama mode
 * frames visible only within "the frame"
 
-This is best viewed in as large of a viewing area (i.e. full screen) as possible. Currently featuring panorama 2552 (frames 2552-2610). It is limited to this only, so far, but will be expanded throughout time to feature other panoramas. Playback of all frames (except the secondary frames) is now supported. A GUI is being added, as well as other extras. Works in Firefox. Not tested in Chrome or mobile (touch) yet.
+This is best viewed in as large of a viewing area (i.e. full screen) as possible. Currently featuring the official panorama 2015, 2066, 2349, 2552, 2681, 2743, & 2760. It is limited to these only, so far, but will be expanded throughout time to feature more panoramas. Playback of all frames (except the secondary frames) is supported. A GUI is being added, as well as other extras. Works in Firefox. Not tested in Chrome or mobile (touch) yet.
 
 * * *
+
+Version 0.2.3
+-------------
+
+* endless epilogue mode fixed: now endless
+* panorama switching is now more stable
+* added panorama 2015(-2065, 2985, 2986) 2066(-2078, 2983, 2984), 2349(-2351, 2972), 2552(2970), 2681(-2692, 2694-2742, 2955-2960), 2743(-2749, 2949, 2950), & 2760(-2768, 2944)
 
 Version 0.2.2
 -------------

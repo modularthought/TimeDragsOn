@@ -2,7 +2,6 @@
 	{
 		"num": 1662,
 		"x": 0, "y": 0,
-		"start": true,
 		"epoch": "mni3o0",
 		"hash": "69677bdf034a98cb3c281bce6ee7ec035ef05ffb25c42dea9dac6b66130e9ebc"
 	},
@@ -2128,385 +2127,465 @@
 	{
 		"num": 2015,
 		"x": 0, "y": 0,
+		"stitch_obj": {
+			"official": true,
+			"x": 0, "y": -38,
+			"width": 750,
+			"height": 433,
+			"x1": 0, "y1": 340.5,
+			"x2": 0, "y2": 185.5
+		},
+		"stitch": 2015,
 		"epoch": "mo9c80",
 		"hash": "420eff36f4e81927231287c9ee3af31d897bcc4a3d447b47692db8d18eafca2f"
 	},
 	{
 		"num": 2016,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mo9f00",
 		"hash": "6a5fe8ad6c2e368a36dadcccae04e5960955e65c984f61c91605b8588888b143"
 	},
 	{
 		"num": 2017,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mo9hs0",
 		"hash": "7bd086ad2b3634fc3684f4f8b178b93eafb0ec321148152a8128034930af13d4"
 	},
 	{
 		"num": 2018,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mo9kk0",
 		"hash": "219f1aa135be4720b6bb03fb4f9e012395a575ac3eaa777547865465d9a6b257"
 	},
 	{
 		"num": 2019,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mo9nc0",
 		"hash": "a51e0f8ec4844c4eccde7b4c2cff628e6c8062bb952f398bf57f3aef3ee58430"
 	},
 	{
 		"num": 2020,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mo9q40",
 		"hash": "af59d65e46affab6c3d79a4bf718af008820bfefeddd51d5d144b630ea264755"
 	},
 	{
 		"num": 2021,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mo9sw0",
 		"hash": "c55cdc50f95d2d86e83e7cbfea3cd7e82c16c9608da97525c0a87e948c559801"
 	},
 	{
 		"num": 2022,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mo9vo0",
 		"hash": "6ce034d53fe6c05f7322ff3ef25803cef8608c8bccd52b939aae4da409f49fde"
 	},
 	{
 		"num": 2023,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mo9yg0",
 		"hash": "f44caa6303ead63f049945c6a6b22cc0c51bf1fcf0aca6e653413a6e26686888"
 	},
 	{
 		"num": 2024,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moa180",
 		"hash": "be76d3410bc92e2bd20b25be4892f86177dd933bc4e20cf18950c74c4b862023"
 	},
 	{
 		"num": 2025,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moa400",
 		"hash": "cd41f43c7a9b63acb3bca858e6d5f1adadbc6b454dff8311690fafdc57fc0874"
 	},
 	{
 		"num": 2026,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moa6s0",
 		"hash": "ddb2d18c23d37f78407a8febc0599e05aa9db93f68b4a3e5d88110f27075d1e0"
 	},
 	{
 		"num": 2027,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moa9k0",
 		"hash": "9f7a9fb66396ac3b08b693bc2e7a21488d55f3bf468b56ecde99d80b4c717a72"
 	},
 	{
 		"num": 2028,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moacc0",
 		"hash": "b9d3db98a4ae6db4698b3e60e7d685e7af652cb1a1cb21b577f348d1f8474624"
 	},
 	{
 		"num": 2029,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moaf40",
 		"hash": "d498507fead9fc9e30bea28258b523834a61090252dbcbfbd4fa8782d1ab2ccd"
 	},
 	{
 		"num": 2030,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moahw0",
 		"hash": "a113f60f7d507cef606d216e5990f47c5aff80d985e6d242e4c4f470434636cd"
 	},
 	{
 		"num": 2031,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moako0",
 		"hash": "0077288f24447b103c698aa5ffe341c50352827ede360d6ee276acfa23406e48"
 	},
 	{
 		"num": 2032,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moang0",
 		"hash": "ce1bb14cd881fc4d674706214e404706ef91c25c14b070cd2993c2969eb9f265"
 	},
 	{
 		"num": 2033,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moaq80",
 		"hash": "8ebb2ba8c0a774a119792d48e5918e3b413f79fff3f5f6ca04a7a7c3a34817f6"
 	},
 	{
 		"num": 2034,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moat00",
 		"hash": "40e388f8f2d91861e93c87bb506867ad6bcfbf2c70495eec618ae1ecd315d674"
 	},
 	{
 		"num": 2035,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moavs0",
 		"hash": "16fd036519f10848971b7e14a451165a683cd68e4600814d89cab419b44cffaf"
 	},
 	{
 		"num": 2036,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moayk0",
 		"hash": "966cf89522495e9b1ce9d6f6dc1c1229595ada24e68ca659a5c80613c0d564fd"
 	},
 	{
 		"num": 2037,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mob1c0",
 		"hash": "fb8c7ac7abc8fd7134ad9ce672887adff25bda854615287ab515856a62e4329b"
 	},
 	{
 		"num": 2038,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mob440",
 		"hash": "d05226f5cbe968068812731c20f0028a2a0acc23ec2da6bff8c7ed43f4858a05"
 	},
 	{
 		"num": 2039,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mob6w0",
 		"hash": "cf8ca319afc57d93fa624db83b3936fce4d3302c2c19d43a0d8fbb7a0e687379"
 	},
 	{
 		"num": 2040,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mob9o0",
 		"hash": "6622887872886e18b1b5605a8fe998ffba4e46c2baf198e5a602e8a365a87d88"
 	},
 	{
 		"num": 2041,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mobcg0",
 		"hash": "ed1022c2755328db6801f099c2c691b4daf579dc846669c0bac234fb4b87a3d4"
 	},
 	{
 		"num": 2042,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mobf80",
 		"hash": "286333607ddee0067c81dd8bd604577492d22495470a85a293e0fc28fe79df86"
 	},
 	{
 		"num": 2043,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mobi00",
 		"hash": "058f30ebd536e958a0d790837a3fdf84c5daa511d6169d3c44ec711cc9a1902f"
 	},
 	{
 		"num": 2044,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mobks0",
 		"hash": "15ffbc0347347ddcb4028c31fab94e9607766acd414c6948820917fae1d0dcfb"
 	},
 	{
 		"num": 2045,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mobnk0",
 		"hash": "682096a4f2807629d7fe9ffe69b70b530d185595268bfce056e338ed4e98ad23"
 	},
 	{
 		"num": 2046,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mobqc0",
 		"hash": "9ef026831028e28dc07942bac64c309cc8e9b730b071e5485a4e12f197d4b33f"
 	},
 	{
 		"num": 2047,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mobt40",
 		"hash": "d270ef29da20a5091b8846df77bd3a9011da4afcd1edcd7d1a5a4e5a7d1c05e1"
 	},
 	{
 		"num": 2048,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mobvw0",
 		"hash": "22aacdd47388837e87a61aee356150cdc1b351a2d1b9384de50d6ba0d773b41a"
 	},
 	{
 		"num": 2049,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mobyo0",
 		"hash": "f2e28241bc37091e816343ac8cc20b533382441e04f3179562a4a25e926b892e"
 	},
 	{
 		"num": 2050,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moc1g0",
 		"hash": "4d732ee6d0c8e2370220380b7da8c9ac9a5475ef62feb6f797be251ad3359754"
 	},
 	{
 		"num": 2051,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moc480",
 		"hash": "97a4355dfb5bad65e2413aa83c69c8f06f9a7e50a357876b9f63ac032cc6f3a3"
 	},
 	{
 		"num": 2052,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moc700",
 		"hash": "5e55c36c21090cc3ccaba0343fe7f055bd2dbe9ed3aa1a4d731db56c1da8a389"
 	},
 	{
 		"num": 2053,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moc9s0",
 		"hash": "a8f0b8832257789ab670bd03239bc1c0d72d55be020635901e2abc1a6dc98260"
 	},
 	{
 		"num": 2054,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mocck0",
 		"hash": "c0d77e412b54dec768707b62f5a4338beb56000db488db89a1787c2b67debae8"
 	},
 	{
 		"num": 2055,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mocfc0",
 		"hash": "4c17ae4cda69b4cf12ea2f2287eada7d6f3a12b5d63bbc7fb8c6ba660e7dd818"
 	},
 	{
 		"num": 2056,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moci40",
 		"hash": "717b9df66ee073ea24ff76382cf9161c37ddb748809ed7184a9663a2212a932b"
 	},
 	{
 		"num": 2057,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mockw0",
 		"hash": "b300fe06257c8990bde1d387b23efa4a7fab85c179fe579e4bf14fa453a66a91"
 	},
 	{
 		"num": 2058,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mocno0",
 		"hash": "6bd3c5eee3e8c107651ce14ad454b92a5db77866c38929021a7aae4a6b580eb9"
 	},
 	{
 		"num": 2059,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mocqg0",
 		"hash": "bf6570439f9e46ccda582d5e8e95edcae82a56bd04ae1a31ac0cd29e651d717b"
 	},
 	{
 		"num": 2060,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "moct80",
 		"hash": "72ead6df3a520c63e7f0d9d0325405ad3f7b859c782171a06d32e8b58d1718c3"
 	},
 	{
 		"num": 2061,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mocw00",
 		"hash": "c16f67aa1e6e134f6c1b8a5ef83711d904a4b22a63c7d9af81d32df486baca29"
 	},
 	{
 		"num": 2062,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mocys0",
 		"hash": "a7b93bb681297cd25314b805b9b876051db537f64278efe04d35b8f8d36d6da8"
 	},
 	{
 		"num": 2063,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mod1k0",
 		"hash": "53571a20a4ae8e1df96f7b62548a04c127ab00f1662e7f344c74d390533dead1"
 	},
 	{
 		"num": 2064,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mod4c0",
 		"hash": "efbbc27e81469f58b8681b5ea51b12f6385662a060d195227649eb2767319939"
 	},
 	{
 		"num": 2065,
 		"x": 0, "y": 0,
+		"stitch": 2015,
 		"epoch": "mod740",
 		"hash": "4e51552750f4f9a7acf014d07f22b02e237392303c0a11890b22fcb8ac98c1fa"
 	},
 
 	{
 		"num": 2066,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch_obj": {
+			"official": true,
+			"x": 0, "y": -24,
+			"width": 651,
+			"height": 421,
+			"x1": 0, "y1": 346.5,
+			"x2": 0, "y2": 165.5
+		},
+		"stitch": 2066,
 		"epoch": "mod9w0",
 		"hash": "7de6a642d2b0605fba13fe047856bdbb1fde319183063326a1c2c72c80536035"
 	},
 	{
 		"num": 2067,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "modco0",
 		"hash": "70d8b318046afb24107692c648d62f860d7dd70500a4178d90fd3f37f75f379e"
 	},
 	{
 		"num": 2068,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "modfg0",
 		"hash": "bfa100697304d37735299087ed9efb625ddfc3eb157a216475c2bee7fce8378d"
 	},
 	{
 		"num": 2069,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "modi80",
 		"hash": "84c00a538ada69330d3f7b039fe24122cd4efcf0f7c37cab215bed7286ff6b90"
 	},
 	{
 		"num": 2070,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "modl00",
 		"hash": "4b651d442c3990cc28c089e807ec1c2f6d53acc07e075672a0fbc50458d73421"
 	},
 	{
 		"num": 2071,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "modns0",
 		"hash": "443389fbd260716c0aeb7cad5314e5b650f1951ca0d56d86afd85a8caa6f868e"
 	},
 	{
 		"num": 2072,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "modqk0",
 		"hash": "42864327541db98bbeb9511fc6b0a010faa7f65aee82b0cda41592332a074070"
 	},
 	{
 		"num": 2073,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "modtc0",
 		"hash": "5bb7144a1f2233bec3a5448b5a39a59dd966af036e86b9afd843b7ee05e73908"
 	},
 	{
 		"num": 2074,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "modw40",
 		"hash": "5d9cb353a8b9f47c4f81c641c773081bbdb099c92b589a2ad770a12ff96ae6d3"
 	},
 	{
 		"num": 2075,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "modyw0",
 		"hash": "0b04523504de36f46b3b9dd25fcee7687a99d6d3f80c68bd3661ba358be863b0"
 	},
 	{
 		"num": 2076,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "moe1o0",
 		"hash": "e415cf2dbf335fc46217dce7f512f8c00db9bf7d4250a43683dd655157fb9daa"
 	},
 	{
 		"num": 2077,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "moe4g0",
 		"hash": "831d4c364c926c186fe6dda80041a7db56560c84ba399aa0ba16bbd7b8f24938"
 	},
 	{
 		"num": 2078,
-		"x": 0, "y": 0,
+		"x": 100, "y": -28,
+		"stitch": 2066,
 		"epoch": "moe780",
 		"hash": "3ed97aa0493a73934dab9870c01f6cd3856da778f5e51cb27a7635bc1b05ed82"
 	},
@@ -4137,50 +4216,30 @@
 	{
 		"num": 2349,
 		"x": 0, "y": 0,
+		"stitch_obj": {
+			"official": true,
+			"x": 0, "y": -22,
+			"width": 611,
+			"height": 417,
+			"x1": 0, "y1": 397.5,
+			"x2": 0, "y2": 187.5
+		},
+		"stitch": 2349,
 		"epoch": "moz400",
 		"hash": "f907d757e91131b86679699be7edc13e8f5e794dc8b40f5dad9729ea05e9fd98"
 	},
 	{
 		"num": 2350,
 		"x": 0, "y": 0,
+		"stitch": 2349,
 		"epoch": "moz6s0",
 		"hash": "f8df10a97cf81b6be5f936cc505e4f05e33b176b7dd4afd50a1e600f454b2ab6"
 	},
 	{
 		"num": 2351,
 		"x": 0, "y": 0,
+		"stitch": 2349,
 		"epoch": "moz9k0",
 		"hash": "254df38e4126df705b4982fa8140123cff447a88fbf9282f566f35a4573b724d"
-	},
-	{
-		"num": 2352,
-		"x": 0, "y": 0,
-		"epoch": "mozcc0",
-		"hash": "0c733af57affa741ac876d226c261c83408f831472c2d729717e2efbb3917059"
-	},
-	{
-		"num": 2353,
-		"x": 0, "y": 0,
-		"epoch": "mozf40",
-		"hash": "66fbf7ece687d0ae7c3d85680b2491c1e6b23e993a81c4dca4320bd39236a8bb"
-	},
-	{
-		"num": 2354,
-		"x": 0, "y": 0,
-		"epoch": "mozhw0",
-		"hash": "0d094c222c4baf7387345a057f85f27a8ef3b51453f0c5dc9e446bb1bc646956"
-	},
-	{
-		"num": 2355,
-		"x": 0, "y": 0,
-		"epoch": "mozko0",
-		"hash": "6e95a2ad7beb6430f33e3b540d20a9fb2b8734c173e008ed839e09ce7c3552f1"
-	},
-	{
-		"num": 2356,
-		"x": 0, "y": 0,
-		"end": true,
-		"epoch": "mozng0",
-		"hash": "01f827d5cbfffb9263b35e3e4c9bc42979d21a0139cf9028f1da9651346f3e5a"
 	}
 ]
