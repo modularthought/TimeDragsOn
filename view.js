@@ -165,8 +165,6 @@ Time.V = {
 			}
 			if (json[img.num+1] && !json[img.num+1].load) {
 				Time.V.cacheImg(json[img.num+1])
-			} else {
-				date2 = Date.now();
 			}
 		}
 	}
