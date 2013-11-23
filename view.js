@@ -59,8 +59,9 @@ Time.V = {
 		Time.V.frames.appendChild(img);
 	}
 	, addImage: function(frame){
-		var img = document.getElementById('imgf'+frame.num.pad());
-		img.setAttributeNS(Time.V.xlink, 'href', (frame.num === 1) ? Time.V.urlf1 :
+		var img = new Image();
+		var image = document.getElementById('imgf'+frame.num.pad());
+		image.setAttributeNS(Time.V.xlink, 'href', img.src = (frame.num === 1) ? Time.V.urlf1 :
 											 Time.V.url+frame.hash+'.png');
 		return img;
 	}
@@ -150,8 +151,7 @@ Time.V = {
 	}
 	, cacheImg: function(img){
 		var cimg = Time.V.addImage(img);
-		cimg.onload = function() {
-			delete cimg.onload;
+		cimg.addEventListener("load", function() {
 			var json = Time.M.json;
 			img.load = true;
 			if (!Time.V.ready && !Time.C.pause) {
@@ -166,7 +166,7 @@ Time.V = {
 			if (json[img.num+1] && !json[img.num+1].load) {
 				Time.V.cacheImg(json[img.num+1])
 			}
-		}
+		}, false);
 	}
 	, epirate: function(){
 		if (Time.M.cfn < 3090 || Time.M.cfn < Time.M.json.length && Time.C.shift < 1) {

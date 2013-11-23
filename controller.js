@@ -61,6 +61,14 @@ Time.C = {
 		document.removeEventListener('mousemove', Time.C.drag, false);
 		document.removeEventListener('mouseup', Time.C.removedrag, false);
 	}
+	, pauseToggle: function() {
+		Time.C.pause = !Time.C.pause;
+		Time.V.displayPStat(Time.C.pause);
+		if (!Time.C.pause && !Time.V.blackflag) {
+			clearInterval(Time.V.stopIterate);
+			Time.V.iterate();
+		}
+	}
 	, keyFn: function(e) {
 		if (!e.altKey && (e.keyCode <= 40 && e.keyCode >= 37)) {
 			e.cancelBubble = false;
@@ -100,13 +108,8 @@ Time.C = {
 			}
 		} else if (!e.altKey && !e.shiftKey && e.ctrlKey && (e.keyCode === 90)) {
 			Time.M.setTranslate(Time.M.resX,Time.M.resY)
-		} else if (!e.altKey && !e.shiftKey && !e.ctrlKey && (e.keyCode === 32)) {
-			Time.C.pause = !Time.C.pause;
-			Time.V.displayPStat(Time.C.pause);
-			if (!Time.C.pause && !Time.V.blackflag) {
-				clearInterval(Time.V.stopIterate);
-				Time.V.iterate();
-			}
+		} else if (!e.altKey && !e.shiftKey && !e.ctrlKey && (e.keyCode === 32 || e.keyCode === 80)) {
+			Time.C.pauseToggle();
 		} else if (!e.altKey && !e.shiftKey && !e.ctrlKey && (e.keyCode === 192)) {
 			var gui = document.getElementById('gui');
 			gui.setAttribute('class',
