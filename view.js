@@ -17,12 +17,19 @@ Time.V = {
 		, imgP = document.createElementNS(Time.V.svg,'path')
 		, imgS;
 		imgP.setAttribute('d',
+		
 			'M'+((framesizex-screenW)/2-frame.stitch_obj.x-4)+','+frame.stitch_obj.y1+
+		
 			'L0,'+frame.stitch_obj.y1+
+		
 			'L'+(frame.stitch_obj.width || framesizex)+','+frame.stitch_obj.y2+
+		
 			'L'+((frame.stitch_obj.width || framesizex)+(screenW-framesizex)/2+frame.stitch_obj.x+2)+','+frame.stitch_obj.y2+
+		
 			'L'+((frame.stitch_obj.width || framesizex)+(screenW-framesizex)/2+frame.stitch_obj.x+2)+','+(framesizey+(screenH-framesizey)/2+frame.stitch_obj.y*-1+2)+
+		
 			'L'+((framesizex-screenW)/2-frame.stitch_obj.x-4)+','+(framesizey+(screenH-framesizey)/2+frame.stitch_obj.y*-1+2))+'Z';
+	
 		imgP.setAttribute('class','stitch_bg');
 		imgG.appendChild(imgP);
 		if (frame.stitch_obj.width) {
@@ -64,6 +71,25 @@ Time.V = {
 		image.setAttributeNS(Time.V.xlink, 'href', img.src = (frame.num === 1) ? Time.V.urlf1 :
 											 Time.V.url+frame.hash+'.png');
 		return img;
+
+	
+	
+	
+	
+	
+	
+	}
+	, togglePShow: function(show) {
+		var p = document.getElementById('periods');
+		if (show) {
+			p.addEventListener('mouseup', Time.C.skipViaSelect, false);
+			p.addEventListener('mousedown', Time.C.setMenuDrag, false);
+			p.style.display = "block";
+		} else {
+			p.removeEventListener('mouseup', Time.C.skipViaSelect, false);
+			p.removeEventListener('mousedown', Time.C.setMenuDrag, false);
+			p.style.display = "none";
+		}
 	}
 	, displayPStat: function(paused) {
 		document.getElementById('pauseStatus').firstChild.nodeValue = (paused) ? 'Paused' : 'Playing';
@@ -82,14 +108,17 @@ Time.V = {
 	, showFrNum: function(adv){
 		var json = Time.M.json;
 		var frame = json[adv]
+		document.getElementById('tframe').removeAttribute('style');
 		document.getElementById('frame_text').firstChild.nodeValue = frame.num.pad();
-		Time.V.centerText('tframe')
+	
+	
 	}
 	, showFrame: function(adv,o,prev){
 		var end = prev;
 		var adv = Time.M.cfn;
 		var json = Time.M.json;
 		if (json[adv].stitch && Time.M.currentS.style.opacity == 0) {
+		
 			Time.M.setTranslate(Time.M.resX,Time.M.resY);
 			Time.M.currentS.style.opacity = (o >= 0 && o <= 100) ? o/100 : 1;
 		}
@@ -109,6 +138,7 @@ Time.V = {
 	, hideFrame: function() {
 		var json = Time.M.json;
 		if (Time.M.pfn) {
+			
 			Time.M.previous.removeAttribute('style');
 		}
 		if (!json[Time.M.cfn].bg) document.getElementById('svg_time_drag').removeAttribute('style');
@@ -123,6 +153,9 @@ Time.V = {
 		Time.M.setPrevious();
 		Time.C.shift = 1;
 		Time.V.blackflag = false;
+	
+	
+	
 		Time.V.stopIterate = setTimeout(function(){
 			if (!Time.C.pause) Time.V.iterate()
 		}, Time.anim ? Time.delay : (100/Time.vel*Time.speed)+Time.delay);
@@ -149,10 +182,13 @@ Time.V = {
 			}
 		},Time.speed)
 	}
+
 	, cacheImg: function(img){
 		var cimg = Time.V.addImage(img);
 		cimg.addEventListener("load", function() {
+		
 			var json = Time.M.json;
+			
 			img.load = true;
 			if (!Time.V.ready && !Time.C.pause) {
 				Time.V.ready = true;
@@ -165,6 +201,9 @@ Time.V = {
 			}
 			if (json[img.num+1] && !json[img.num+1].load) {
 				Time.V.cacheImg(json[img.num+1])
+			} else {
+				date2 = Date.now();
+				
 			}
 		}, false);
 	}

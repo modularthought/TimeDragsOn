@@ -4,7 +4,7 @@
 	 xmlns="http://www.w3.org/2000/svg"
 	 xmlns:xlink="http://www.w3.org/1999/xlink"
 	 version="1.1">
-<title id="title">Time Drags On (AKA Drag On "Time")</title>
+<title id="title">Time Drags On</title>
 <defs id="defs6">
 	<g id="bordercorner">
 		<rect class="borderlight"
@@ -14,6 +14,10 @@
 		<rect class="bordermid"
 			 x="0" y="1" width="1" height="1" />
 	</g>
+	<clipPath id="clipframe">
+		<rect id="brectclip"
+			 x="1" y="1" width="551" height="391" />
+	</clipPath>
 	<mask id="borderframe"
 		 maskUnits="objectBoundingBox" >
 		<rect id="brectframe"
@@ -34,20 +38,20 @@
 		 <tspan id="pauseStatus"
 		 dx="1 1 0 0 1 1 1">Loading</tspan></text>
 	<text id="tframe"
-		 x="-140" y="20"
+		 x="50%" y="20"
 		 dx="0 1 1 1 1 -1.5" >
 		frame#<tspan id="frame_text"
 		 dx="3 1 1 1" />
 	</text>
-	<text id="tptext"><tspan x="0" y="0" id="tperiod" /></text>
+	<text id="tptext" x="50%" y="100%"><tspan dy="-5" id="tperiod"/></text>
 </defs>
 <svg id="images_svg"
 	 x="50%"
-	 y="50%"
+	 y="50%" 
 	 >
 	<svg id="images_group"
 	 x="-276"
-	 y="-198"
+	 y="-198" 
 		  >
 		<g id="stitch_group"
 			 transform="translate(0,0)" />
@@ -78,15 +82,14 @@
 	<use class="text_fill" xlink:href="#tdrag" />
 	<use class="text_outline" xlink:href="#tframe" />
 	<use id="frame_text_fill" class="text_fill" xlink:href="#tframe" />
+	<svg id="ptext_svg" x="50%" y="50%">
+
+		<g id="pmask" transform="translate(-274.5,-196)">
+			<g id="periods" transform="translate(0,0)" />
+ 		</g>
+	</svg>
 	<use id="text_o" class="text_outline" xlink:href="#tptext" />
 	<use id="text_f" class="text_fill" xlink:href="#tptext" />
-	<g transform="translate(0,-23)">
-		<foreignObject width="100%" height="26" x="0" y="100%">
-			<body xmlns="http://www.w3.org/1999/xhtml">
-				<select id="periods" />
-			</body>
-		</foreignObject>
-	</g>
 </svg>
 <script id="script_time_drag" xlink:href="drag.js" />
 <script id="script_time_model" xlink:href="model.js" />

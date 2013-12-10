@@ -18,6 +18,12 @@ This is best viewed in as large of a viewing area (i.e. full screen) as possible
 
 * * *
 
+Version 0.2.5
+-------------
+
+* selection menu recreated in svg; draggable
+* selection menu no longer behind anything
+
 Version 0.2.4
 -------------
 

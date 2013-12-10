@@ -18,15 +18,20 @@
 	min-width: 553px;
 	min-height: 395px;
 }
+
 svg {
 	overflow: visible;
 }
+
+
 #mframe #rectframe, #borderframe #brectframe {
 	fill: #fff; stroke: none;
 }
 #mframe #dialogue {
 	fill: #000; stroke: none;
 }
+
+
 #stitch_group g {
 	opacity: 0;
 	display: none;
@@ -37,6 +42,8 @@ svg {
 .stitch_bg {
 	fill: #000; stroke: #111; stroke-width: 1.5; stroke-opacity: 0.75;
 }
+
+
 image {
 	image-rendering: optimizeQuality;
 }
@@ -47,8 +54,11 @@ image {
 	display: none;
 	mask: url(drag.svg#mframe);
 }
+
+
 #border {
 	stroke: none;
+	
 	fill: #000;
 }
 .bordermid {
@@ -57,15 +67,20 @@ image {
 .borderlight {
 	fill: #b7b7b7; stroke: none;
 }
-#bordercorner rect, #borderframe rect, #mframe rect, #border {
+#bordercorner rect, #borderframe rect, #mframe rect, #border, #periods rect {
 	shape-rendering: crispEdges
 }
+
+ 
+
 .show {
 	display: block;
 }
 .hide {
 	display: none;
 }
+
+
 text {
 	font-family: 'xkcd-Regular','xkcd';
 }
@@ -81,85 +96,116 @@ text {
 .hilite_fill {
 	fill: #fff; stroke: none;
 }
+#tframe, #tptext {
+	text-anchor: middle;
+}
+
+
+#pmask {
+
+	mask: url(drag.svg#borderframe);
+}
 #periods {
-	position: absolute; bottom: 0;
-	margin: auto; cursor: pointer;
-	left: 0; right: 0;
-	text-align: right; opacity: 0;
+	display: none;
 }
-#periods option, #p {
-	min-width: 250px; overflow: hidden;
-	text-align: left;
-	font-family: 'xkcd-Regular','xkcd';
-	font-size: 1.125em;
+#periods .option, #tptext {
+	cursor: pointer;
 }
-#periods option.eon {
-	font-weight: bolder; color: #fff; font-style: italic;
-	text-align: center;
-	font-size: 1.55em;
+#periods rect {
+	opacity: 0.95;
 }
-.eon0, .eon1, .eon2 {
-	border-width: 0 3px 0; border-style: solid;
+
+#periods .eon text {
+	font-weight: bolder; fill: #fff; font-style: italic;
+	text-anchor: middle;
+	font-size: 1.5em;
 }
 .eon0 {
-	background-color: #777; border-color: #777;
+	fill: #777;
+}
+#periods .eon0.option:hover rect {
+	fill: #777;
+}
+.eons {
+	fill: none; stroke-width: 4px;
+}
+.eon0 .eons {
+	stroke: #777;
 }
 .eon1 {
-	background-color: #696969; border-color: #696969;
+	fill: #696969;
+}
+#periods .eon1.option:hover rect {
+	fill: #696969;
+}
+.eon1 .eons {
+	stroke: #696969;
 }
 .eon2 {
-	background-color: #5a5a5a; border-color: #5a5a5a;
+	fill: #5a5a5a;
 }
-.eon0.end, .eon1.end, .eon2.end {
-	border-bottom-width: 3px;
+#periods .eon2.option:hover rect {
+	fill: #5a5a5a;
 }
-#periods option.era {
-	font-weight: bold; color: #000;
+.eon2 .eons {
+	stroke: #5a5a5a; fill: none; stroke-width: 4px;
+}
+#periods .era text {
+	font-weight: bold; fill: #000;
 	text-align: left;
-	font-size: 1.35em;
+	font-style: normal;
+	text-anchor: start;
+	font-size: 1.2em;
+}
+#periods .option text {
+	font-size: 0.85em;
+	font-weight: normal;
 }
 .era0 {
-	background-color: #f0f0f0;
+	fill: #f0f0f0;
 }
 .era1 {
-	background-color: #e6e6e6;
+	fill: #e6e6e6;
 }
 .era2 {
-	background-color: #dcdcdc;
+	fill: #dcdcdc;
 }
 .era3 {
-	background-color: #d2d2d2;
+	fill: #d2d2d2;
 }
 .era4 {
-	background-color: #c8c8c8;
+	fill: #c8c8c8;
 }
 .era5 {
-	background-color: #bebebe;
+	fill: #bebebe;
 }
 .era6 {
-	background-color: #b4b4b4;
+	fill: #b4b4b4;
 }
 .era7 {
-	background-color: #aaa;
+	fill: #aaa;
 }
 .era8 {
-	background-color: #a5a5a5;
+	fill: #a5a5a5;
 }
 .era9 {
-	background-color: #a0a0a0;
+	fill: #a0a0a0;
 }
 .era10 {
-	background-color: #9b9b9b;
+	fill: #9b9b9b;
 }
 .era11 {
-	background-color: #969696;
+	fill: #969696;
 }
 .era12 {
-	background-color: #919191;
+	fill: #919191;
 }
 .era13 {
-	background-color: #8c8c8c;
+	fill: #8c8c8c;
 }
 .era14 {
-	background-color: #878787;
+	fill: #878787;
+}
+#periods .option:hover text {
+	fill: #fff;
 }
